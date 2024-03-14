@@ -12,7 +12,7 @@ title                    : "Personal Pages of Stargazer"
 title_separator          : "-"
 name                     : &name "stargazer"
 description              : &description "personal description"
-url                      :  https://stargazer1995.github.io/stargazer95/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      :  https://stargazer1995.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "StarGazer1995/stargazer95"
 
