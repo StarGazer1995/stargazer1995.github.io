@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-
+---
 Education
 ======
 * M.Sc. in Electrical Engineering, Technical University, 2020.2-2021.11
