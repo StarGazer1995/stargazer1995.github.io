@@ -18,7 +18,7 @@ paginate = 12
 # google analytics code [UA-XXXXXXXX-X]
 googleAnalytics = ""
 # copyright description used only for seo schema
-copyright = "Dorad"
+copyright = "StarGazer"
 
 # whether to use robots.txt
 enableRobotsTXT = true
@@ -85,9 +85,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  date format
   dateFormat = "2006-01-02"
   # website title for Open Graph and Twitter Cards
-  title = "Dorad's blog"
+  title = "StarGazer's blog"
   # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "Love coding & photograph"
+  description = "A programmer who finally works for a vehicle he dreamed"
   # website images for Open Graph and Twitter Cards
   images = ["/avatar.png"]
 
@@ -102,7 +102,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # URL of the LOGO
       logo = ""
       # title name
-      name = "Dorad"
+      name = "StarGazer"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = "🏰"
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -191,13 +191,13 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.home.profile]
       enable = true
       # Gravatar Email for preferred avatar in home page
-      gravatarEmail = "ddxid@outlook.com"
+      gravatarEmail = "zhao.gong@outlook.com"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.png"
       #  title shown in home page (HTML format is supported)
-      title = "Dorad"
+      title = "StarGazer"
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "Love coding & photograph."
+      subtitle = "A programmer who finally works for a vehicle he dreamed."
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -288,7 +288,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     HackTheBox = ""
     RootMe= ""
     Phone = ""
-    Email = "ddxid@outlook.com"
+    Email = "zhao.gong@outlook.com"
     RSS = true # 
 
   #  Page global config
