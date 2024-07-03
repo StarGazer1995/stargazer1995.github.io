@@ -1,10 +1,10 @@
-baseURL = "https://doradx.github.io/"
+baseURL = "https://stargazer1995.github.io/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
 # website title
-title = "Dorad"
+title = "StarGazer"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -32,9 +32,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 [author]
-  name = "Dorad"
-  email = "ddxid@outlook.com"
-  link = "https://doradx.github.io"
+  name = "StarGazer"
+  email = "zhao.gong@outlook.com"
+  link = "https://stargazer1995.github.io"
 
 # Menu config
 [menu]
@@ -78,7 +78,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
-  gitRepo = "https://github.com/Doradx/doradx.github.io"
+  gitRepo = "https://github.com/StarGazer1995/stargazer1995.github.io"
   #  which hash function used for SRI, when empty, no SRI is used
   # ["sha256", "sha384", "sha512", "md5"]
   fingerprint = ""
@@ -215,12 +215,12 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # Social config about the author
   [params.social]
-    GitHub = "Doradx"
+    GitHub = "StarGazer1995"
     Linkedin = ""
     Twitter = ""
-    Instagram = "dorddka"
+    Instagram = ""
     Facebook = ""
-    Telegram = "ddxxid"
+    Telegram = ""
     Medium = ""
     Gitlab = ""
     Youtubelegacy = ""
@@ -393,7 +393,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       [params.page.comment.gitalk]
         # 
         enable = false
-        owner = "Doradx"
+        owner = "StarGazer1995"
         repo = "gitalk-hugo"
         clientId = ""
         clientSecret = ""
@@ -444,7 +444,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       [params.page.comment.utterances]
         enable = true
         # owner/repo
-        repo = "Doradx/doradx.github.io"
+        repo = "StarGazer1995/stargazer1995.github.io"
         issueTerm = "title"
         label = ""
         lightTheme = "github-light"
