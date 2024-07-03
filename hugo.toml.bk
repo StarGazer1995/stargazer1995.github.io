@@ -1,0 +1,5 @@
+baseURL = 'https://doradx.github.com'
+languageCode = 'en-us'
+title = 'Dorad'
+
+theme = 'LoveIt'
