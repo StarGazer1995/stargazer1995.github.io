@@ -8,7 +8,7 @@ tags:
 updated: 2024-07-04T02:13:00+00:00
 date: 2024-07-04T01:57:00+00:00
 title: complicated geo coordinate systems
-cover: https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/50591284-f16a-4e30-a23d-6c56f8b07ceb/IMG_0091.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133655Z&X-Amz-Expires=3600&X-Amz-Signature=b55845b4e006a63f6550543639f3ef973b539fd2dbb1480e8580e1710af8ad1f&X-Amz-SignedHeaders=host&x-id=GetObject
+cover: https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/50591284-f16a-4e30-a23d-6c56f8b07ceb/IMG_0091.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T140757Z&X-Amz-Expires=3600&X-Amz-Signature=d417e16230afbbef1e519585fcebf243f6178c3cdf4cb081172d2177a204001d&X-Amz-SignedHeaders=host&x-id=GetObject
 id: c94cada3-a872-46ee-959a-b073902ff265
 ---
 
