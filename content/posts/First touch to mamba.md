@@ -7,7 +7,7 @@ cover: https://www.notion.so/images/page-cover/rijksmuseum_jansz_1636.jpg
 id: 16b485d2-90af-4103-816d-314870e04d6a
 ---
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/f4425041-9cff-41b3-9da7-b628790af0b0/Untitled.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133034Z&X-Amz-Expires=3600&X-Amz-Signature=1fd42f40ce07871aa90c7282e5c832bbfe9d79a12c07e694d20d0e33e50ba8bc&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/f4425041-9cff-41b3-9da7-b628790af0b0/Untitled.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133656Z&X-Amz-Expires=3600&X-Amz-Signature=25ed5d4445715a8cfd95c21fb319fa381b46e282bd3a59aa5d46873604d6015f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 From the perceptive of the structure of mamba, this is a discrete selective space machine that runs in linear time using linear space.
 

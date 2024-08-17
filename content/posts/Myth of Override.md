@@ -55,9 +55,9 @@ int main(){
 
 My initial thought was, 'How can we override a private virtual function? It wouldn't pass the compilation test.' However, I was surprised by the real compiler's response: PASS.
 
-![What a joke.](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/7076b5a7-f77b-4088-89a5-4af49191dc75/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133034Z&X-Amz-Expires=3600&X-Amz-Signature=17e0a38ab1607f006c7494f54d9e2c858ee4e0f31cfc5c8f5d28e2b23f6edd0d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![What a joke.](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/7076b5a7-f77b-4088-89a5-4af49191dc75/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133656Z&X-Amz-Expires=3600&X-Amz-Signature=95f462ec7979598441ed486abb5e38b15df5c073e8dc6a1a6189acd3fcc49010&X-Amz-SignedHeaders=host&x-id=GetObject)
 
-![The joke, again!](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/2529529b-7ad6-4518-8580-80a12b76db36/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133034Z&X-Amz-Expires=3600&X-Amz-Signature=a36a5e5781d133e83c7880d7e7b0e00ebc9ed41d42c25431c2cfda4ae51d5f81&X-Amz-SignedHeaders=host&x-id=GetObject)
+![The joke, again!](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/2529529b-7ad6-4518-8580-80a12b76db36/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240817T133656Z&X-Amz-Expires=3600&X-Amz-Signature=7f08059d90852f3d72697cb5f010bc26943703b05a009840e634fbb568a8c463&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 Not only does it override the private virtual function, but it also changes the access level of the function in the derived class.
 
