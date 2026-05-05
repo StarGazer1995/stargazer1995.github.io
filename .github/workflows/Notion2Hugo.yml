@@ -1,9 +1,11 @@
 name: Notion2Hugo
 on:
+  schedule:
+    - cron: '0 */2 * * *'
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: write
@@ -93,3 +95,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
