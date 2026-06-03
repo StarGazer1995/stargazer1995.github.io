@@ -14,6 +14,6 @@ id: 87c332da-18e6-4f88-859b-7964e2dbb366
 
 Here is Zhao Gong. I used to be an algorithm engineer at Plus and currently working for BMW as a software developer. I got my masters from the Technical University of Denmark. Github is one of important portals for me to connect to the world.
 
-[Blog Pages](https://www.notion.so/a5584e7fb26440b7b3fa268da9ee8560)
+[Blog Pages](https://app.notion.com/p/a5584e7fb26440b7b3fa268da9ee8560)
 
 [页面链接](/d88765d087ec4a77bf0fe76bf90043f9?v=3df8ea4719a14e1382fbee5611ba4a0f)

@@ -9,7 +9,7 @@ tags:
 updated: 2024-07-04T02:13:00+00:00
 date: 2024-07-04T01:57:00+00:00
 title: A story of debugging
-cover: https://www.notion.so/images/page-cover/nasa_tim_peake_spacewalk.jpg
+cover: https://app.notion.com/images/page-cover/nasa_tim_peake_spacewalk.jpg
 id: 0ae76d47-ede5-47b7-ab9f-04c1d5b0cda5
 ---
 
