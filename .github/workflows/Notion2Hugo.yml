@@ -1,4 +1,5 @@
 name: Notion2Hugo
+
 on:
   schedule:
     - cron: '0 */2 * * *'
@@ -14,24 +15,25 @@ permissions:
 
 jobs:
   sync:
-    name: Notion2Hugo on ubuntu-latest
+    name: Sync Notion content
     runs-on: ubuntu-latest
-    outputs:
-      HAS_CHANGES: ${{ steps.NotionSync.outputs.updated_count !='0' }}
     steps:
       - name: Checkout blog and theme
         uses: actions/checkout@v4
         with:
           submodules: 'recursive'
           fetch-depth: 0
+
       - name: Check the NOTION_SYNC_DATETIME
         id: GetNotionSyncDatetime
         run: |
           NOTION_SYNC_DATETIME=$(git log -n 1 --grep="NotionSync" --format="%aI")
           echo "NOTION_SYNC_DATETIME=$NOTION_SYNC_DATETIME" >> "$GITHUB_OUTPUT"
           echo -e "Latest notion sync datetime:\n$NOTION_SYNC_DATETIME"
-      - name: Convert notion to markdown
-        id: NotionSync
+
+      # Personal / life / book posts. The database id stays in the existing secret.
+      - name: Sync Blog Pages
+        id: BlogSync
         uses: Doradx/notion2markdown-action@v1
         with:
           notion_secret: ${{ secrets.NOTION_SECRET }}
@@ -44,15 +46,54 @@ jobs:
           clean_unpublished_post: true
           metas_keeped: slug
           metas_excluded: pstatus, ptype
-          # last_sync_datetime: ${{ steps.GetNotionSyncDatetime.outputs.NOTION_SYNC_DATETIME }}
+
+      # Technical notes. Database ids are not secrets; update this constant if the
+      # Tech Notes database is replaced.
+      - name: Sync Tech Notes
+        id: TechSync
+        uses: Doradx/notion2markdown-action@v1
+        with:
+          notion_secret: ${{ secrets.NOTION_SECRET }}
+          database_id: '3fcb3b02-81c4-812f-b0ef-d69e5c01aab8'
+          pic_migrate: false
+          pic_bed_config: ${{ secrets.PICBED_CONFIG }}
+          pic_compress: true
+          output_page_dir: 'content/pages'
+          output_post_dir: 'content/tech'
+          clean_unpublished_post: true
+          metas_keeped: slug
+          metas_excluded: pstatus, ptype, related_notes
+
+      - name: Ensure section indexes
+        run: |
+          mkdir -p content/tech content/posts
+          if [ ! -f content/tech/_index.md ]; then
+            printf -- '---\ntitle: Tech Notes\ndescription: Notes on autonomous driving, 3D reconstruction, reinforcement learning, and the tools I build.\n---\n' > content/tech/_index.md
+          fi
+          if [ ! -f content/posts/_index.md ]; then
+            printf -- '---\ntitle: Writing\ndescription: Essays, field notes, and things that do not fit in a code review.\n---\n' > content/posts/_index.md
+          fi
+
+      # Notion image URLs expire. Mirror them into static/images/notion and
+      # rewrite both Markdown and front-matter references.
+      - name: Mirror Notion images
+        id: Postprocess
+        run: |
+          python3 -m pip install --quiet requests
+          python3 scripts/postprocess_notion.py
+          if ! git diff --quiet -- content static/images/notion; then
+            echo "changed=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Commit & Push
-        if: steps.NotionSync.outputs.updated_count != '0'
+        if: steps.BlogSync.outputs.updated_count != '0' || steps.TechSync.outputs.updated_count != '0' || steps.Postprocess.outputs.changed == '1'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: 'content/'
+          file_pattern: 'content/ static/images/notion/'
           commit_message: Automatic NotionSync.
 
-  # Deployment job
   deploy:
     runs-on: ubuntu-latest
     environment:
@@ -81,7 +122,6 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
@@ -95,4 +135,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

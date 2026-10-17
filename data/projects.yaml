@@ -1,0 +1,19 @@
+- name: mcp-stargazing
+  description: An MCP server for real-time astronomy data, stargazing planning, weather, and light-pollution analysis.
+  tags: [MCP, Python, Astronomy]
+  link: https://github.com/StarGazer1995/mcp-stargazing
+
+- name: stargazing-place-finder
+  description: A dark-sky location analyzer built on VIIRS radiance, PostGIS, and OSM road connectivity.
+  tags: [GIS, PostGIS, VIIRS]
+  link: https://github.com/StarGazer1995/stargazing-place-finder
+
+- name: stargazing-core
+  description: Shared astronomy primitives for coordinates, catalogues, moon phases, planets, and observing windows.
+  tags: [Python, Astronomy, Library]
+  link: https://github.com/StarGazer1995/stargazing-core
+
+- name: stargazer1995.github.io
+  description: This site — Hugo, the LoveIt theme, and a two-source Notion publishing pipeline.
+  tags: [Hugo, Notion, GitHub Pages]
+  link: https://github.com/StarGazer1995/stargazer1995.github.io

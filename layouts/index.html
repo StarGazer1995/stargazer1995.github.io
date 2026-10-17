@@ -1,0 +1,123 @@
+{{- define "content" -}}
+{{- $tech := where .Site.RegularPages "Section" "tech" -}}
+{{- $tech = $tech.ByDate.Reverse -}}
+{{- $blog := where .Site.RegularPages "Section" "posts" -}}
+{{- $blog = $blog.ByDate.Reverse -}}
+{{- $blog = where $blog "Title" "!=" "关于我" -}}
+{{- $featured := first 3 $tech -}}
+{{- $latestBlog := first 4 $blog -}}
+
+<link rel="stylesheet" href="{{ "css/home.css" | relURL }}">
+<div class="home-v2">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">AUTONOMOUS DRIVING · ASTROPHOTOGRAPHY · SYSTEMS</p>
+      <h1>Hi, I'm <span>StarGazer</span>.</h1>
+      <p class="lede">
+        I build autonomous driving systems by day, write down what I learn,
+        and chase dark skies on weekends.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/tech/">Read tech notes</a>
+        <a class="btn" href="https://github.com/StarGazer1995" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="/about/">About</a>
+      </div>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+      <div class="core">SG</div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div><strong>{{ len $tech }}</strong><span>Tech notes</span></div>
+    <div><strong>{{ len $blog }}</strong><span>Essays</span></div>
+    <div><strong>{{ len .Site.Data.projects }}</strong><span>Projects</span></div>
+  </section>
+
+  {{- with $featured }}
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">TECH NOTES</p>
+        <h2>What I'm working through</h2>
+      </div>
+      <a class="section-link" href="/tech/">All notes →</a>
+    </div>
+    <div class="card-grid">
+      {{- range . }}
+      <a class="note-card" href="{{ .RelPermalink }}">
+        <div class="card-top">
+          {{- with .Params.series }}<span class="badge">{{ . }}</span>{{ else }}<span class="badge">Tech</span>{{ end }}
+          <time>{{ .Date.Format "2006-01-02" }}</time>
+        </div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 150 }}{{ end }}</p>
+        <span class="card-arrow">Read →</span>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  {{- with $latestBlog }}
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">WRITING</p>
+        <h2>Notes from outside the codebase</h2>
+      </div>
+      <a class="section-link" href="/posts/">All posts →</a>
+    </div>
+    <div class="writing-list">
+      {{- range . }}
+      <a class="writing-row" href="{{ .RelPermalink }}">
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+        <span class="writing-title">{{ .Title }}</span>
+        <span class="writing-arrow">→</span>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  {{- with .Site.Data.projects }}
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">PROJECTS</p>
+        <h2>Things I build and maintain</h2>
+      </div>
+    </div>
+    <div class="project-grid">
+      {{- range . }}
+      <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
+        <div class="project-top">
+          <h3>{{ .name }}</h3>
+          <span class="project-arrow">↗</span>
+        </div>
+        <p>{{ .description }}</p>
+        <div class="tags">
+          {{- range .tags }}<span>{{ . }}</span>{{ end }}
+        </div>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  <section class="section about-strip">
+    <div>
+      <p class="eyebrow">ABOUT</p>
+      <h2>Engineer, note-taker, night-sky chaser.</h2>
+      <p class="about-copy">
+        I care about systems that make autonomous driving safer, and about
+        keeping a clear record of how I got there. This site is where those
+        two threads meet.
+      </p>
+    </div>
+    <a class="btn btn-primary" href="/about/">More about me</a>
+  </section>
+</div>
+{{- end -}}

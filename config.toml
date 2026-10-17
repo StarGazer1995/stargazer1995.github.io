@@ -51,6 +51,14 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     title = ""
   [[menu.main]]
     weight = 2
+    identifier = "tech"
+    pre = ""
+    post = ""
+    name = "Tech"
+    url = "/tech/"
+    title = "Technical notes"
+  [[menu.main]]
+    weight = 3
     identifier = "tags"
     pre = ""
     post = ""
@@ -58,7 +66,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     url = "/tags/"
     title = ""
   [[menu.main]]
-    weight = 3
+    weight = 4
     identifier = "categories"
     pre = ""
     post = ""
@@ -66,7 +74,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     url = "/categories/"
     title = ""
   [[menu.main]]
-    weight = 4
+    weight = 5
     identifier = "about"
     pre = ""
     post = ""
@@ -87,7 +95,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # website title for Open Graph and Twitter Cards
   title = "StarGazer's blog"
   # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "A programmer who finally works for a vehicle he dreamed"
+  description = "Autonomous driving engineer, systems builder, and weekend astrophotographer."
   # website images for Open Graph and Twitter Cards
   images = ["/avatar.png"]
 
@@ -197,7 +205,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       #  title shown in home page (HTML format is supported)
       title = "StarGazer"
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "A programmer who finally works for a vehicle he dreamed."
+      subtitle = "Autonomous driving engineer. Systems builder. Weekend astrophotographer."
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
