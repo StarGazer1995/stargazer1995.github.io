@@ -7,12 +7,12 @@ tags:
   - 读书
   - 咖啡
   - 历史
-updated: 2026-10-18T11:47:00+00:00
-date: 2026-10-18T11:50:00+00:00
+updated: 2026-10-18T11:50:00+00:00
+date: 2026-10-18T02:00:00+00:00
 slug: coffee-ledger
 title: 一杯咖啡的账
 cover:
-  image: "/images/notion/da260ab8a3b2eb7e.jpg"
+  image: "/images/notion/1d90f8baaed3b703.jpg"
   alt: ""
 id: 16fb3b02-81c4-80be-97f1-c7616e4baeda
 ---
@@ -21,7 +21,7 @@ id: 16fb3b02-81c4-80be-97f1-c7616e4baeda
 
 那时候我在读《黑金：咖啡秘史》。一个觉得自己很富有的下午，一本讲这杯东西怎么把成本推给别人的书。
 
-![丽江三联书店，桌上摊着《黑金》。](/images/notion/6d0aa017d6582d98.jpg)
+![丽江三联书店，桌上摊着《黑金》。](/images/notion/00cd3a0f7594d8fb.jpg)
 
 作者安东尼·怀尔德在咖啡行业做了十三年采购，后来去写殖民史。这个履历决定了这本书的写法：它不是风味笔记，也不是咖啡百科，而是一条商品链的账本。原书名里的 dark history 比中文的“秘史”更直接，说的不是秘密，是黑暗。
 
