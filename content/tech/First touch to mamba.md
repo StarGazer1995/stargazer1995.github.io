@@ -9,7 +9,7 @@ title: First touch to mamba
 id: 3fcb3b02-81c4-8172-be4f-e871d7f0beef
 ---
 
-![](/images/notion/cfe9a443e10bab94.jpg)
+![](/images/notion/747541838460476e.jpg)
 
 From the perceptive of the structure of mamba, this is a discrete selective space machine that runs in linear time using linear space.
 
