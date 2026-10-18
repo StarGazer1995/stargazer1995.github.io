@@ -12,7 +12,7 @@ date: 2026-10-18T02:00:00+00:00
 slug: east-of-jerusalem
 title: 边界不止在墙上
 cover:
-  image: "/images/notion/c32c7e6a52e97d17.webp"
+  image: "/images/notion/16496586a937fb23.webp"
   alt: ""
 id: 11ab3b02-81c4-8001-8d07-e5a61b6c2bbb
 ---

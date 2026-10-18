@@ -54,7 +54,7 @@ uv venv # starts a new virtual environment
 
 如果成功，UV 会生成一些新文件，如下图所示：
 
-![](/images/notion/507f739d1b87b489.png)
+![](/images/notion/99fa0b492e895ee3.png)
 
 ## 总结
 
@@ -115,25 +115,25 @@ fastmcp dev main.py # run the code in development code
 
 如果运行顺利，你会在终端中看到一些信息。
 
-![](/images/notion/241e2e724e41dc7a.png)
+![](/images/notion/fcff4ef908b4b0f3.png)
 
 这些信息告诉你，mcp inspector 正在 6274 端口运行，你可以通过它提供的 URL 链接访问。MCP inspector 是我们验证服务器是否起来的工具。我们不会花太多时间来介绍。
 
 访问检查器服务器后，你会看到如下界面。点击左侧的连接按钮。
 
-![](/images/notion/da275f94867fd95c.png)
+![](/images/notion/b4422b1cb75d590b.png)
 
 连接建立后，界面会变成这样。
 
-![](/images/notion/4c83d9ea210b8884.png)
+![](/images/notion/2d9a4d842b0588f6.png)
 
 我们首先点击 "工具 "按钮，然后选择 "列表工具"，检查我们所使用的工具。然后运行。
 
-![](/images/notion/469482e429c6815a.png)
+![](/images/notion/a794f374015463fe.png)
 
 如果工具执行成功，就会看到如下界面的结果。那么你就成功运行了一个 mcp 工具。
 
-![](/images/notion/bbc21c220b93ef86.png)
+![](/images/notion/b129cdd5f2c57fe3.png)
 
 ### 调试代码
 
@@ -179,4 +179,4 @@ uvx --python=$(which python) ${PACKAGE} # run the package using specific python 
 
 如果一切顺利，你会在 CLI 中看到以下信息。它会告诉你 MCP 服务器正在运行。
 
-![](/images/notion/35f494f3a98679b2.png)
+![](/images/notion/e7a76ca1bef32066.png)
