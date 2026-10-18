@@ -57,9 +57,9 @@ int main(){
 
 My initial thought was, 'How can we override a private virtual function? It wouldn't pass the compilation test.' However, I was surprised by the real compiler's response: PASS.
 
-![What a joke.](/images/notion/4c740449f5b84a44.png)
+![What a joke.](/images/notion/55285bee5730149d.png)
 
-![The joke, again!](/images/notion/62b1eb51429c43a4.png)
+![The joke, again!](/images/notion/45554cadad969cec.png)
 
 Not only does it override the private virtual function, but it also changes the access level of the function in the derived class.
 
