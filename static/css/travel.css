@@ -602,6 +602,23 @@ body[theme="dark"] .travel-v2 .trip-hero {
   background: #9a6f8f;
 }
 
+.travel-v2 .photo-pin {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: 0 3px 10px rgba(70, 55, 38, 0.25);
+  font-size: 14px;
+}
+
+.travel-v2 .photo-legend {
+  margin-left: 4px;
+  color: var(--accent);
+}
+
 body[theme="dark"] .travel-v2 .leaflet-tile-pane {
   filter: invert(1) hue-rotate(180deg) brightness(0.82) contrast(0.9);
 }

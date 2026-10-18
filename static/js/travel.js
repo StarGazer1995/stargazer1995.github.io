@@ -119,6 +119,22 @@
       detailBounds.push([s.lat, s.lon]);
     });
 
+    (trip.gallery || []).forEach(function (p) {
+      if (p.lat == null || p.lon == null) return;
+      var photoIcon = L.divIcon({
+        className: 'photo-pin',
+        html: '<span>📷</span>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
+      var pm = L.marker([p.lat, p.lon], { icon: photoIcon }).addTo(detailMap);
+      pm.bindPopup(
+        '<img src="' + p.src + '" alt="" style="width:200px;border-radius:8px;display:block;margin-bottom:8px">' +
+        '<strong>' + p.caption + '</strong>' + (p.date ? '<br>' + p.date : '')
+      );
+      detailBounds.push([p.lat, p.lon]);
+    });
+
     if (detailBounds.length) detailMap.fitBounds(detailBounds, { padding: [40, 40] });
     setTimeout(function () { detailMap.invalidateSize(); }, 200);
   }
