@@ -1,15 +1,15 @@
 ---
-created: 2024-07-04T01:57:00+00:00
-categories:
-  - Blog
+date: 2024-07-04T01:57:00+00:00
+series: 工程实践
+updated: 2026-10-17T16:09:00+00:00
+created: 2026-10-17T16:09:00+00:00
 tags:
   - Problems
   - Blog
-updated: 2024-07-04T02:13:00+00:00
-date: 2024-07-04T01:57:00+00:00
+categories:
+  - Blog
 title: Myth of Override
-cover: https://app.notion.com/images/page-cover/webb1.jpg
-id: 6e79f44c-5df9-46d3-bbec-45dc2f724d70
+id: 3fcb3b02-81c4-81e1-9141-c84d2a99e826
 ---
 
 # Introduction:
@@ -55,9 +55,9 @@ int main(){
 
 My initial thought was, 'How can we override a private virtual function? It wouldn't pass the compilation test.' However, I was surprised by the real compiler's response: PASS.
 
-![What a joke.](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/7076b5a7-f77b-4088-89a5-4af49191dc75/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664RPQYWEH%2F20261017%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261017T132103Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDQaCXVzLXdlc3QtMiJGMEQCIFU7lfTievKfEswxjV%2FMs0BOnkFexnBM6%2FKbaTn%2BH%2FS9AiB84DWFcIlAHbP55X5Hs%2FTWExLI1kd616zgJEkIe3u7aSqIBAj9%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMW46cDkF9voUlZbMxKtwDcinqbMGR4EDoMUmuqxCxLGcPQllpPXHkvvL5PcsvC0R%2Bmr0irY2n64zBKrFt%2FxyOcZodWdtrGFOYue3hGDKmIaue5sRD6EPoVl6Ih4LjEx5iqkqmiQCjOjLLDSg%2BG2%2B2eBKCTH%2Fgac85XVkgqsmO19xUVTTkI1sJBQgFoB6XORh8f37Dhi%2BJNf34pi%2BTswXaflPBYpC4nQyAtRHSfvPMPD%2FeGiKD8V%2FbUFsucn4UYMOB1pEY%2FL%2B%2BvEwV%2F%2FwqXmdOodl4Ja3osexxUNm%2BIOUJQODIq2cyVfyrWoDP8ioE0x3F%2B5GqN2dDV9mVF%2F3dOWhUA%2B2dcgAwZStpzxNbXbvWi%2FuJOpjypXD3QcoClehQPMXvYoBbac4AEflodNToKmRZ7LOv%2BDSMFU1d3vJ1RjMy%2FcAXby1Qm7qRPcKpFJRa9Y9LI178A6UXwGnJBwgSiXcg8hJQSh2ArdHTyAz4f7430m2KdzjbLIJYFrnBbVCavNljYQ34FOPCzeVgmU6eJvnCwQcRYibb91Rn%2BmXpjkSV3llypMB%2FQG7gl07aAhF1jlGFoZ8yjjSxnoslW8PX3wBoVp2rpHV%2FN4q5H2ypJc1qaHBBNSQKcgIy7VI7lziEtkUT0YLpAcNhTvLN0Kow2LvN1gY6pgHQ74FXPQdFRIn0tOV4ZcBTnyn1dcn6it5uQV3ckHWLyRB2GjpKqmZDO8ovRF1cAFgEVQfLUi3ZQ4KgeFRj6n2iVczDd8HaEviTFdNp0W%2F7eaVF4C5NXHjbLYR5OXbFonVkUYd0n1oIA%2FtFpzdjodAIY%2BBtunCLFTt06f%2BQ4utmWpG9jOkYAtfDSIMKc9ojmMumzoLtx7WKkOQlXkrOo%2F5CwF0eYGPQ&X-Amz-Signature=66f2ef403e387d8e7e5e440f2c80b4a7fbfc467cc10e2144cfa7bffec91f7cd1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![What a joke.](/images/notion/29e4a9664d51480a.png)
 
-![The joke, again!](https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/2529529b-7ad6-4518-8580-80a12b76db36/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664RPQYWEH%2F20261017%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261017T132103Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDQaCXVzLXdlc3QtMiJGMEQCIFU7lfTievKfEswxjV%2FMs0BOnkFexnBM6%2FKbaTn%2BH%2FS9AiB84DWFcIlAHbP55X5Hs%2FTWExLI1kd616zgJEkIe3u7aSqIBAj9%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMW46cDkF9voUlZbMxKtwDcinqbMGR4EDoMUmuqxCxLGcPQllpPXHkvvL5PcsvC0R%2Bmr0irY2n64zBKrFt%2FxyOcZodWdtrGFOYue3hGDKmIaue5sRD6EPoVl6Ih4LjEx5iqkqmiQCjOjLLDSg%2BG2%2B2eBKCTH%2Fgac85XVkgqsmO19xUVTTkI1sJBQgFoB6XORh8f37Dhi%2BJNf34pi%2BTswXaflPBYpC4nQyAtRHSfvPMPD%2FeGiKD8V%2FbUFsucn4UYMOB1pEY%2FL%2B%2BvEwV%2F%2FwqXmdOodl4Ja3osexxUNm%2BIOUJQODIq2cyVfyrWoDP8ioE0x3F%2B5GqN2dDV9mVF%2F3dOWhUA%2B2dcgAwZStpzxNbXbvWi%2FuJOpjypXD3QcoClehQPMXvYoBbac4AEflodNToKmRZ7LOv%2BDSMFU1d3vJ1RjMy%2FcAXby1Qm7qRPcKpFJRa9Y9LI178A6UXwGnJBwgSiXcg8hJQSh2ArdHTyAz4f7430m2KdzjbLIJYFrnBbVCavNljYQ34FOPCzeVgmU6eJvnCwQcRYibb91Rn%2BmXpjkSV3llypMB%2FQG7gl07aAhF1jlGFoZ8yjjSxnoslW8PX3wBoVp2rpHV%2FN4q5H2ypJc1qaHBBNSQKcgIy7VI7lziEtkUT0YLpAcNhTvLN0Kow2LvN1gY6pgHQ74FXPQdFRIn0tOV4ZcBTnyn1dcn6it5uQV3ckHWLyRB2GjpKqmZDO8ovRF1cAFgEVQfLUi3ZQ4KgeFRj6n2iVczDd8HaEviTFdNp0W%2F7eaVF4C5NXHjbLYR5OXbFonVkUYd0n1oIA%2FtFpzdjodAIY%2BBtunCLFTt06f%2BQ4utmWpG9jOkYAtfDSIMKc9ojmMumzoLtx7WKkOQlXkrOo%2F5CwF0eYGPQ&X-Amz-Signature=e5452a456feb94f133fc8436a95718d4c18cbb9ff28386fe2daa215cad89e7dc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![The joke, again!](/images/notion/19601e785582c606.png)
 
 Not only does it override the private virtual function, but it also changes the access level of the function in the derived class.
 

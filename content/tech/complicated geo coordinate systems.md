@@ -1,15 +1,15 @@
 ---
-created: 2024-07-04T01:57:00+00:00
-categories:
-  - Blog
+date: 2024-07-04T01:57:00+00:00
+series: 工程实践
+updated: 2026-10-17T16:01:00+00:00
+created: 2026-10-17T16:01:00+00:00
 tags:
   - Notion
   - Problems
-updated: 2024-07-04T02:13:00+00:00
-date: 2024-07-04T01:57:00+00:00
+categories:
+  - Blog
 title: complicated geo coordinate systems
-cover: https://prod-files-secure.s3.us-west-2.amazonaws.com/9ae3228c-6982-46ec-8946-abb7d53f72af/50591284-f16a-4e30-a23d-6c56f8b07ceb/IMG_0091.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664CPHKS3S%2F20261017%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261017T132103Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDQaCXVzLXdlc3QtMiJIMEYCIQC98%2BETbamwqySM6PzANcd%2BgFLmTica45RHhdzmMCSSVQIhAKGn1WrNoaeYctLbo5iq3vFqteiAXxpa4FlM%2FFZggAHyKogECPz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxmtvJfWzgyG4Pu22oq3ANGU9qLTD3a9xUyB%2BkkDiWjLQS1EY26b8dd8UsFCJHAS%2B%2F5amPpmrqr%2FbO9c6mJMzOd6ND2ifgK10vqlxSG55xvfualTC3AS%2BqoQbwOjyG8gDiIw28r%2FeGTRqArH%2Btf9JgHELYa%2BkKUZVABRqD3biOSxU4bLoYEXEuZeSFUIALDEiff2l8vqnmktVWv%2F4PIxxUc1yquesV84xEMnZsA9uxCCu%2B6NtOwN62GjBqFUxqqdh4Xce29NaZWRv60IgUiiB6AgMUKTk86rctfQJRQvqppJRmS4hArM5jIEvo9TImkChxv76OxW4mpzw35gQr6v9C%2FdKQGN2EtzsDTCKUPuBI7GSpPX8p9Hbf4vzSE3DW%2FTVCLRQi%2FK%2BNEmnmuKEfG4QE5UuIInnIOoN8ScXlmRyYWJQBkduZ0ylIACDSrQYJZ3LvBreeJFvNjn9L8Nu%2Fi8%2F%2BTKF1HDGKDE9aQHYCNjYFIHrPPd%2FVGBpCcSkJ4BCP4hQZABjk1ll4hvTubqU5bxlqLJUftQhe5ad9nUMIH19oq%2Fvohem26GCr%2BF9Xec9CcaPWG2lvf2uHYIsBu3ZK7dj3%2FfiqMVtR%2FFGV586P32wq52NCRRZYz%2BBJXRJJ2x5RdBGmiz9k85HdDpd%2B%2BhDCOu83WBjqkARRhQVqVq81P7Yd31wPcxiiWVp8qyByO2DNuzoj68%2FFtjtr%2BZcI2nDHkOhpsl%2F5a6yy%2BnxiMaZ%2FRqU1G0Ze%2BNxdokKPfz1Y%2BUCnqrNX4FSJT3mHnbFkv4N%2B7iTPGJ%2BOj%2FngxaIcnNh9j1X7I5vlYgIBK1QkG6aPSe52jm6IMt%2FJxzps1YOkblRHm1BbSC8FIOTRE9jfFgB7oKD7%2BiuHusuKDqVAs&X-Amz-Signature=3185af71fbbfc1c50a7584fa8edd0a477e1140f089c6611df53dbca1b3e13617&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
-id: c94cada3-a872-46ee-959a-b073902ff265
+id: 3fcb3b02-81c4-81a8-b660-e5984062141a
 ---
 
 Transforming through coordination systems can be confused for some developers like me. But we have to know those commonly used systems and know the bridge between these words.

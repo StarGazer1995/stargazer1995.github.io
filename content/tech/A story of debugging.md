@@ -1,16 +1,16 @@
 ---
-created: 2024-07-04T01:57:00+00:00
-categories:
-  - Blog
+date: 2024-07-04T01:57:00+00:00
+series: 工程实践
+updated: 2026-10-17T16:09:00+00:00
+created: 2026-10-17T16:09:00+00:00
 tags:
   - Problems
   - Blog
   - Note
-updated: 2024-07-04T02:13:00+00:00
-date: 2024-07-04T01:57:00+00:00
+categories:
+  - Blog
 title: A story of debugging
-cover: https://app.notion.com/images/page-cover/nasa_tim_peake_spacewalk.jpg
-id: 0ae76d47-ede5-47b7-ab9f-04c1d5b0cda5
+id: 3fcb3b02-81c4-8148-9c0a-e47d493a933d
 ---
 
 # Introduction
