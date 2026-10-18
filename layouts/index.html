@@ -11,28 +11,28 @@
 <div class="home-v2">
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">AUTONOMOUS DRIVING · ASTROPHOTOGRAPHY · SYSTEMS</p>
-      <h1>Hi, I'm <span>StarGazer</span>.</h1>
+      <p class="eyebrow">Autonomous driving · Astrophotography</p>
+      <h1>Hi, I'm <span>Zhao</span>.</h1>
       <p class="lede">
-        I build autonomous driving systems by day, write down what I learn,
-        and chase dark skies on weekends.
+        I go by StarGazer online. I work on autonomous driving systems, write
+        down what I learn, and when the sky is clear I'm usually outside with
+        a camera and a telescope.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/tech/">Read tech notes</a>
+        <a class="btn btn-primary" href="/tech/">Read the notes</a>
+        <a class="btn" href="/about/">About me</a>
         <a class="btn" href="https://github.com/StarGazer1995" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="/about/">About</a>
       </div>
     </div>
-    <div class="hero-mark" aria-hidden="true">
-      <div class="orbit orbit-a"></div>
-      <div class="orbit orbit-b"></div>
-      <div class="core">SG</div>
+    <div class="hero-portrait">
+      <img src="/images/avatar.png" alt="Portrait of Zhao">
+      <span>Shanghai · usually coding or looking up</span>
     </div>
   </section>
 
   <div class="now-strip">
     <span class="live-dot" aria-hidden="true"></span>
-    Currently building autonomous driving systems · chasing dark skies on clear nights
+    Right now: autonomous driving by day, deep-sky imaging when the clouds cooperate
   </div>
 
   <section class="stats">
@@ -45,7 +45,7 @@
   <section class="featured">
     <a class="featured-card" href="{{ .RelPermalink }}">
       <div class="featured-copy">
-        <p class="eyebrow">FEATURED NOTE</p>
+        <p class="eyebrow">A note worth starting with</p>
         <div class="card-top">
           {{- with .Params.series }}<span class="badge">{{ . }}</span>{{ else }}<span class="badge">Tech</span>{{ end }}
           <time>{{ .Date.Format "2006-01-02" }}</time>
@@ -66,8 +66,8 @@
   <section class="section">
     <div class="section-head">
       <div>
-        <p class="eyebrow">TECH NOTES</p>
-        <h2>What I'm working through</h2>
+        <p class="eyebrow">Tech notes</p>
+        <h2>Things I've been figuring out</h2>
       </div>
       <a class="section-link" href="/tech/">All notes →</a>
     </div>
@@ -91,8 +91,8 @@
   <section class="section">
     <div class="section-head">
       <div>
-        <p class="eyebrow">WRITING</p>
-        <h2>Notes from outside the codebase</h2>
+        <p class="eyebrow">Writing</p>
+        <h2>Outside the codebase</h2>
       </div>
       <a class="section-link" href="/posts/">All posts →</a>
     </div>
@@ -112,8 +112,8 @@
   <section class="section">
     <div class="section-head">
       <div>
-        <p class="eyebrow">PROJECTS</p>
-        <h2>Things I build and maintain</h2>
+        <p class="eyebrow">Projects</p>
+        <h2>Things I build and keep</h2>
       </div>
     </div>
     <div class="project-grid">
@@ -135,7 +135,7 @@
 
   <section class="section about-strip">
     <div>
-      <p class="eyebrow">ABOUT</p>
+      <p class="eyebrow">About</p>
       <h2>Engineer, note-taker, night-sky chaser.</h2>
       <p class="about-copy">
         I care about systems that make autonomous driving safer, and about

@@ -53,6 +53,28 @@ def download(url, proxies):
     raise last
 
 
+def normalize_math(text):
+    """Make Notion/KaTeX math blocks valid for KaTeX.
+
+    Notion exports multi-line equations with ``\\newline``, which KaTeX does
+    not understand. Convert those to ``\\\\`` and wrap the block in a
+    ``gathered`` environment. Also undo Markdown's ``\\_`` escaping.
+    """
+
+    def repl(match):
+        body = match.group(1)
+        had_newline = "\\newline" in body
+        body = body.replace("\\newline", "\\\\")
+        body = body.replace("\\_", "_")
+        body = body.replace("…", "\\dots")
+        body = re.sub(r"\\\\\s*$", "", body.strip())
+        if had_newline:
+            body = "\\begin{gathered}\n" + body + "\n\\end{gathered}"
+        return "$$\n" + body + "\n$$"
+
+    return re.sub(r"\$\$(.*?)\$\$", repl, text, flags=re.S)
+
+
 def main():
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
     manifest = load_manifest()
@@ -79,9 +101,10 @@ def main():
             text,
         )
         text = re.sub(r"(?m)^\s*(?:link_to_page|table_of_contents)\s*$\n?", "", text)
-        label_changed = text != original
+        text = normalize_math(text)
+        content_changed = text != original
         urls = [] if os.environ.get("SKIP_IMAGE_DOWNLOAD") == "1" else sorted(set(URL_RE.findall(text)))
-        if not urls and not label_changed:
+        if not urls and not content_changed:
             continue
         changed = False
         for url in urls:
@@ -106,7 +129,7 @@ def main():
                 text = text.replace(url, local)
                 changed = True
                 rewritten += 1
-        if changed or label_changed:
+        if changed or content_changed:
             path.write_text(text, encoding="utf-8")
 
     MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")

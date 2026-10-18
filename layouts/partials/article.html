@@ -31,7 +31,7 @@
     <aside class="article-aside">
       {{- with .TableOfContents }}
       <div class="aside-card">
-        <p class="eyebrow">ON THIS PAGE</p>
+        <p class="eyebrow">In this note</p>
         <div class="article-toc">{{ . }}</div>
       </div>
       {{- end }}
@@ -43,7 +43,7 @@
       {{- end -}}
       {{- with first 3 $related }}
       <div class="aside-card">
-        <p class="eyebrow">RELATED</p>
+        <p class="eyebrow">More like this</p>
         <ul class="related-list">
           {{- range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
         </ul>
