@@ -33,6 +33,13 @@
     </div>
   </div>
 
+  {{- with .story }}
+  <section class="trip-story">
+    <p class="eyebrow">旅记</p>
+    {{- range . }}<p>{{ . }}</p>{{ end }}
+  </section>
+  {{- end }}
+
   <div class="trip-content">
     <aside class="trip-aside">
       <div class="aside-card">
@@ -76,6 +83,26 @@
       {{- end }}
     </div>
   </div>
+
+  {{- with .gallery }}
+  <section class="trip-gallery">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Photos</p>
+        <h2>这一路的画面</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      {{- range . }}
+      <figure>
+        <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy">
+        <figcaption>{{ .caption }}</figcaption>
+      </figure>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+  {{- with .photo_note }}<p class="photo-note">{{ . }}</p>{{ end }}
   {{- else }}
   <p class="travel-empty">这条路线还在整理中。</p>
   {{- end }}

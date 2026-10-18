@@ -454,6 +454,61 @@ body[theme="dark"] .travel-v2 .trip-hero {
   min-width: 0;
 }
 
+.travel-v2 .trip-story {
+  max-width: 780px;
+  margin: 30px 0 0;
+}
+
+.travel-v2 .trip-story p {
+  margin: 0 0 1.1em;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.travel-v2 .trip-gallery {
+  margin-top: 44px;
+}
+
+.travel-v2 .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.travel-v2 .gallery-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.travel-v2 .gallery-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.travel-v2 .gallery-grid figcaption {
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.travel-v2 .photo-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
 .travel-v2 .day-card {
   display: grid;
   grid-template-columns: 110px minmax(0, 1fr);
@@ -588,5 +643,9 @@ body[theme="dark"] .travel-v2 .leaflet-tile-pane {
   .travel-v2 .day-card {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .travel-v2 .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
