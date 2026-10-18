@@ -96,7 +96,7 @@
     <div class="gallery-grid">
       {{- range . }}
       <figure>
-        <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy">
+        <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy"{{ with .pos }} style="object-position: {{ . }}"{{ end }}>
         <figcaption>{{ .caption }}</figcaption>
       </figure>
       {{- end }}

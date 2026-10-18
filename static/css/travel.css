@@ -484,10 +484,14 @@ body[theme="dark"] .travel-v2 .trip-hero {
   background: var(--card);
 }
 
+.travel-v2 .gallery-grid figure:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .travel-v2 .gallery-grid img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
