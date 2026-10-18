@@ -5,20 +5,95 @@
   var ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
   function makeMap(el, center, zoom) {
-    var map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
+    var map = L.map(el, {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      zoomSnap: 0.25,
+      zoomDelta: 0.5
+    });
     map.setView(center || [30, 110], zoom || 4);
     L.tileLayer(TILE, { attribution: ATTR, subdomains: 'abc', maxZoom: 19 }).addTo(map);
+
+    // macOS trackpad pinch arrives as wheel events with ctrlKey set.
+    // Plain two-finger scroll is left alone so the page still scrolls normally.
+    var container = map.getContainer();
+    map.scrollWheelZoom.disable();
+    container.addEventListener('wheel', function (e) {
+      if (!e.ctrlKey || map.scrollWheelZoom.enabled()) return;
+      e.preventDefault();
+      var point = map.mouseEventToContainerPoint(e);
+      var next = map.getZoom() - e.deltaY / 120;
+      map.setZoomAround(point, Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), next)));
+    }, { passive: false });
+
+    // Clicking the map switches on regular wheel / two-finger scroll zoom.
+    container.addEventListener('click', function () {
+      if (map.scrollWheelZoom.enabled()) return;
+      map.scrollWheelZoom.enable();
+      el.classList.add('zoom-active');
+      var card = el.closest('.trip-map-card');
+      var hint = card && card.querySelector('.map-zoom-hint');
+      if (hint) {
+        hint.textContent = '滚轮缩放已启用';
+        hint.classList.add('is-on');
+        setTimeout(function () { hint.classList.add('is-faded'); }, 2200);
+      }
+    });
+
+    // Safari reports trackpad pinch as gesture events instead of ctrl+wheel.
+    var gestureBase = null;
+    container.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+      gestureBase = map.getZoom();
+    });
+    container.addEventListener('gesturechange', function (e) {
+      e.preventDefault();
+      if (gestureBase == null) gestureBase = map.getZoom();
+      var point = map.mouseEventToContainerPoint(e);
+      map.setZoomAround(point, gestureBase + Math.log2(e.scale || 1));
+    });
+
+    el._tripMap = map;
     return map;
   }
 
-  function icon(label, kind) {
+  function icon(label, kind, photoCount) {
     return L.divIcon({
       className: 'trip-pin ' + (kind || ''),
-      html: '<span>' + label + '</span>',
+      html: '<span>' + label + '</span>' +
+        (photoCount ? '<em class="pin-photo-count">📷' + photoCount + '</em>' : ''),
       iconSize: [34, 34],
       iconAnchor: [17, 17],
       popupAnchor: [0, -18]
     });
+  }
+
+  function esc(str) {
+    return String(str == null ? '' : str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function photoBlock(photos) {
+    if (!photos.length) return '';
+    var byDay = {};
+    photos.forEach(function (p) {
+      var key = p.day || '';
+      (byDay[key] = byDay[key] || []).push(p);
+    });
+    var html = '<div class="map-photo-block">' +
+      '<p class="map-photo-hint">📷 城市级定位（原片无 GPS）</p>';
+    Object.keys(byDay).sort().forEach(function (d) {
+      html += '<p class="map-photo-day">' + (d ? d.slice(5) : '日期待补') + '</p>' +
+        '<div class="map-photo-grid">';
+      byDay[d].forEach(function (p) {
+        html += '<a href="' + p.src + '" data-photo data-caption="' + esc(p.caption) + '" title="' + esc(p.caption) + '">' +
+          '<img src="' + p.src + '" alt="" loading="lazy"></a>';
+      });
+      html += '</div>';
+    });
+    return html + '</div>';
   }
 
   function photoIcon() {
@@ -118,6 +193,12 @@
     var first = trip.route[0];
     var detailMap = makeMap(detailEl, [first.lat, first.lon], 8);
     var detailBounds = [];
+    var photoGroups = {};
+
+    (trip.gallery || []).forEach(function (p) {
+      if (!p.place || (p.lat != null && p.lon != null)) return;
+      (photoGroups[p.place] = photoGroups[p.place] || []).push(p);
+    });
 
     for (var i = 0; i < trip.route.length - 1; i++) {
       var a = trip.route[i];
@@ -137,8 +218,12 @@
       if (seen[key]) return;
       seen[key] = true;
       var label = String(Object.keys(seen).length);
-      var marker = L.marker([s.lat, s.lon], { icon: icon(label, s.kind) }).addTo(detailMap);
-      marker.bindPopup('<strong>' + s.name + '</strong><br>' + (KIND_LABEL[s.kind] || s.kind || ''));
+      var photos = photoGroups[s.name] || [];
+      var marker = L.marker([s.lat, s.lon], { icon: icon(label, s.kind, photos.length) }).addTo(detailMap);
+      marker.bindPopup(
+        '<strong>' + s.name + '</strong><br>' + (KIND_LABEL[s.kind] || s.kind || '') + photoBlock(photos),
+        { maxWidth: 340 }
+      );
       detailBounds.push([s.lat, s.lon]);
     });
 
@@ -152,7 +237,44 @@
       detailBounds.push([p.lat, p.lon]);
     });
 
-    if (detailBounds.length) detailMap.fitBounds(detailBounds, { padding: [40, 40] });
+    if (detailBounds.length) {
+      detailMap.fitBounds(detailBounds, {
+        paddingTopLeft: [40, 50],
+        paddingBottomRight: [40, 110]
+      });
+    }
     setTimeout(function () { detailMap.invalidateSize(); }, 200);
+  }
+
+  var lightbox = document.getElementById('photo-lightbox');
+  if (lightbox) {
+    var lightboxImg = lightbox.querySelector('img');
+    var lightboxCap = lightbox.querySelector('p');
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImg.removeAttribute('src');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest ? e.target.closest('[data-photo]') : null;
+      if (!link) return;
+      e.preventDefault();
+      lightboxImg.src = link.getAttribute('href');
+      lightboxCap.textContent = link.getAttribute('data-caption') || '';
+      lightbox.hidden = false;
+      document.body.classList.add('lightbox-open');
+    });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox || (e.target.closest && e.target.closest('.photo-lightbox-close'))) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
   }
 })();

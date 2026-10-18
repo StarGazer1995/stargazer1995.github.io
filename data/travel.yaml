@@ -107,27 +107,27 @@ trips:
       - "10/1 在保山城区，希音咖啡的冷萃不错；10/2 去坝湾的新寨咖啡庄园，铁皮卡平和、瑰夏明亮，晚上乡野土菜偏重口。10/3 回昆明，大观楼和海埂大坝日落；10/4 省博和官渡古镇，17:00 飞上海。"
       - "复盘：全程无自驾，城际铁路 + 县际班车 + 打车完全够用；保山城区的点体量小，下次把时间留给腾冲/潞江坝；山珍苑的野生菌火锅是季节限定，明年 9–10 月再补。"
     gallery:
-      - { src: "/images/travel/dianxi/kunming-laostreet.jpg", alt: "昆明老街一带的古玩城", caption: "9/25 下午落地昆明，老街一带的古玩城，牌楼和居民楼挤在一起。" }
-      - { src: "/images/travel/dianxi/guoqiao-mixian.jpg", alt: "建新园过桥米线", caption: "到昆明第一顿，建新园过桥米线，一碗汤配一托盘小碟。" }
-      - { src: "/images/travel/dianxi/kunming-signs.jpg", alt: "护国路与南强街的路牌", caption: "护国路、南强街的路牌，往右是吃的，往左也是吃的。" }
-      - { src: "/images/travel/dianxi/cuihu.jpg", alt: "昆明翠湖", caption: "9/28 的翠湖，水面被风吹皱，远处是昆明的楼。" }
-      - { src: "/images/travel/dianxi/yunda-qifeng.jpg", alt: "云南大学校园里的起凤坊", caption: "云大校园里的起凤坊，树荫把整条路罩住。", pos: "center 42%" }
-      - { src: "/images/travel/dianxi/jiangwutang.jpg", alt: "云南陆军讲武堂", caption: "云南陆军讲武堂，黄墙前面正好停了一辆出租车。", pos: "center 38%" }
-      - { src: "/images/travel/dianxi/coffee-manor.jpg", alt: "潞江坝比顿庄园的草坪", caption: "9/29 到潞江坝，比顿庄园的草坪，云压在山头上。" }
-      - { src: "/images/travel/dianxi/shubao-ta.jpg", alt: "芒市街边的老榕树", caption: "9/30 芒市街边的老榕树，气根一直垂到地面。", pos: "center 32%" }
-      - { src: "/images/travel/dianxi/puti-temple.jpg", alt: "芒市菩提寺门口", caption: "菩提寺门口，傣族大姐拎着花往里走，门楣上挂着黑底金字的匾。" }
-      - { src: "/images/travel/dianxi/mangshi-peacock.jpg", alt: "菩提寺院子里的孔雀", caption: "菩提寺院子里的孔雀，蹲在花盆边上，完全不怕人。" }
-      - { src: "/images/travel/dianxi/mangshi-white.jpg", alt: "芒市银塔群", caption: "金塔旁边的银塔群，白得有点晃眼。" }
-      - { src: "/images/travel/dianxi/mangshi-golden.jpg", alt: "芒市勐焕大金塔", caption: "雷牙让山上的勐焕大金塔，背后就是一整片山。" }
-      - { src: "/images/travel/dianxi/wofo-temple.jpg", alt: "保山卧佛寺", caption: "10/1 保山卧佛寺，池水把大殿整个翻了一遍。" }
-      - { src: "/images/travel/dianxi/coffee-geisha.jpg", alt: "比顿庄园的云南瑰夏", caption: "比顿庄园的云南瑰夏，卡片上写着黄杏、果酱、咖啡花。" }
+      - { src: "/images/travel/dianxi/kunming-laostreet.jpg", alt: "昆明老街一带的古玩城", caption: "9/25 下午落地昆明，老街一带的古玩城，牌楼和居民楼挤在一起。", day: "2026-09-25", place: "昆明" }
+      - { src: "/images/travel/dianxi/guoqiao-mixian.jpg", alt: "建新园过桥米线", caption: "到昆明第一顿，建新园过桥米线，一碗汤配一托盘小碟。", day: "2026-09-25", place: "昆明" }
+      - { src: "/images/travel/dianxi/kunming-signs.jpg", alt: "护国路与南强街的路牌", caption: "护国路、南强街的路牌，往右是吃的，往左也是吃的。", day: "2026-09-25", place: "昆明" }
+      - { src: "/images/travel/dianxi/cuihu.jpg", alt: "昆明翠湖", caption: "9/28 的翠湖，水面被风吹皱，远处是昆明的楼。", day: "2026-09-28", place: "昆明" }
+      - { src: "/images/travel/dianxi/yunda-qifeng.jpg", alt: "云南大学校园里的起凤坊", caption: "云大校园里的起凤坊，树荫把整条路罩住。", pos: "center 42%", day: "2026-09-28", place: "昆明" }
+      - { src: "/images/travel/dianxi/jiangwutang.jpg", alt: "云南陆军讲武堂", caption: "云南陆军讲武堂，黄墙前面正好停了一辆出租车。", pos: "center 38%", day: "2026-09-28", place: "昆明" }
+      - { src: "/images/travel/dianxi/coffee-manor.jpg", alt: "潞江坝比顿庄园的草坪", caption: "9/29 到潞江坝，比顿庄园的草坪，云压在山头上。", day: "2026-09-29", place: "潞江坝" }
+      - { src: "/images/travel/dianxi/coffee-geisha.jpg", alt: "比顿庄园的云南瑰夏", caption: "比顿庄园的云南瑰夏，卡片上写着黄杏、果酱、咖啡花。", day: "2026-09-29", place: "潞江坝" }
+      - { src: "/images/travel/dianxi/shubao-ta.jpg", alt: "芒市街边的老榕树", caption: "9/30 芒市街边的老榕树，气根一直垂到地面。", pos: "center 32%", day: "2026-09-30", place: "芒市" }
+      - { src: "/images/travel/dianxi/puti-temple.jpg", alt: "芒市菩提寺门口", caption: "菩提寺门口，傣族大姐拎着花往里走，门楣上挂着黑底金字的匾。", day: "2026-09-30", place: "芒市" }
+      - { src: "/images/travel/dianxi/mangshi-peacock.jpg", alt: "菩提寺院子里的孔雀", caption: "菩提寺院子里的孔雀，蹲在花盆边上，完全不怕人。", day: "2026-09-30", place: "芒市" }
+      - { src: "/images/travel/dianxi/mangshi-white.jpg", alt: "芒市银塔群", caption: "金塔旁边的银塔群，白得有点晃眼。", day: "2026-09-30", place: "芒市" }
+      - { src: "/images/travel/dianxi/mangshi-golden.jpg", alt: "芒市勐焕大金塔", caption: "雷牙让山上的勐焕大金塔，背后就是一整片山。", day: "2026-09-30", place: "芒市" }
+      - { src: "/images/travel/dianxi/wofo-temple.jpg", alt: "保山卧佛寺", caption: "10/1 保山卧佛寺，池水把大殿整个翻了一遍。", day: "2026-10-01", place: "保山" }
       - { src: "/images/travel/dianxi/coffee-tree.jpg", alt: "咖啡树叶特写", caption: "庄园边上的咖啡树，叶子被雨洗得很干净。" }
-      - { src: "/images/travel/dianxi/coffee-clouds.jpg", alt: "新寨村的山间云海", caption: "同一天中午，云从山腰漫过来，整个村子只剩屋顶。" }
-      - { src: "/images/travel/dianxi/daguanlou.jpg", alt: "昆明大观楼", caption: "10/3 大观楼，柳枝挡在前面，楼下全是人。" }
-      - { src: "/images/travel/dianxi/kunming-lake.jpg", alt: "昆明滇池边的快艇", caption: "滇池边的快艇刚靠岸，湖对岸是西山。" }
-      - { src: "/images/travel/dianxi/lotus.jpg", alt: "昆明水面上的睡莲", caption: "水面上开着一朵睡莲，十月的昆明还没什么秋意。" }
-      - { src: "/images/travel/dianxi/dinosaur.jpg", alt: "云南省博物馆的云南地形模型", caption: "10/4 云南省博，大厅里一块立体的云南地形模型。" }
-      - { src: "/images/travel/dianxi/cloud-sea.jpg", alt: "返程航班上的云海", caption: "回上海的航班上，云层一直铺到天边。" }
+      - { src: "/images/travel/dianxi/coffee-clouds.jpg", alt: "新寨村的山间云海", caption: "10/2 中午在新寨，云从山腰漫过来，整个村子只剩屋顶。", day: "2026-10-02", place: "潞江坝" }
+      - { src: "/images/travel/dianxi/daguanlou.jpg", alt: "昆明大观楼", caption: "10/3 大观楼，柳枝挡在前面，楼下全是人。", day: "2026-10-03", place: "昆明" }
+      - { src: "/images/travel/dianxi/kunming-lake.jpg", alt: "昆明滇池边的快艇", caption: "滇池边的快艇刚靠岸，湖对岸是西山。", day: "2026-10-03", place: "昆明" }
+      - { src: "/images/travel/dianxi/lotus.jpg", alt: "昆明水面上的睡莲", caption: "水面上开着一朵睡莲，十月的昆明还没什么秋意。", day: "2026-10-03", place: "昆明" }
+      - { src: "/images/travel/dianxi/dinosaur.jpg", alt: "云南省博物馆的云南地形模型", caption: "10/4 云南省博，大厅里一块立体的云南地形模型。", day: "2026-10-04", place: "昆明" }
+      - { src: "/images/travel/dianxi/cloud-sea.jpg", alt: "返程航班上的云海", caption: "回上海的航班上，云层一直铺到天边。", day: "2026-10-04" }
     photo_note: "照片都从 iPhone 的「Photos」里导出，按拍摄时间排；这批原片没有 GPS 信息，所以只放画廊，没往地图上硬标点位，地图上的停靠点按行程城市标。"
     itinerary:
       - date: 2026-09-25

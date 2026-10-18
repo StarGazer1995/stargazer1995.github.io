@@ -22,14 +22,15 @@
 
   <div class="trip-map-card">
     <div id="trip-map" class="trip-map"></div>
+    <span class="map-zoom-hint">双指捏合缩放 · 点击地图可用滚轮</span>
     <div class="map-caption">
-      <span>点位按城市 / 景区中心近似，路线为示意</span>
+      <span>点位按城市 / 景区中心近似，路线为示意 · 双指捏合缩放</span>
       <span class="map-legend">
         <i class="dot drive"></i>自驾 / 铁路
         <i class="dot flight"></i>飞机
         <i class="dot stay"></i>住宿
         <i class="dot star"></i>拍星
-        <span class="photo-legend">📷 照片位置</span>
+        <span class="photo-legend">📷 照片（城市级）</span>
       </span>
     </div>
   </div>
@@ -41,6 +42,7 @@
   </section>
   {{- end }}
 
+  {{- $gallery := .gallery | default (slice) -}}
   <div class="trip-content">
     <aside class="trip-aside">
       <div class="aside-card">
@@ -76,6 +78,16 @@
           <ul>
             {{- range .items }}<li>{{ . }}</li>{{ end }}
           </ul>
+          {{- $dayPhotos := where $gallery "day" .date }}
+          {{- with $dayPhotos }}
+          <div class="day-photos">
+            {{- range . }}
+            <a class="day-photo" href="{{ .src }}" data-photo data-caption="{{ .caption }}">
+              <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy"{{ with .pos }} style="object-position: {{ . }}"{{ end }}>
+            </a>
+            {{- end }}
+          </div>
+          {{- end }}
         </div>
       </article>
       {{- end }}
@@ -96,7 +108,9 @@
     <div class="gallery-grid">
       {{- range . }}
       <figure>
-        <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy"{{ with .pos }} style="object-position: {{ . }}"{{ end }}>
+        <a href="{{ .src }}" data-photo data-caption="{{ .caption }}">
+          <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy"{{ with .pos }} style="object-position: {{ . }}"{{ end }}>
+        </a>
         <figcaption>{{ .caption }}</figcaption>
       </figure>
       {{- end }}
@@ -107,6 +121,11 @@
   {{- else }}
   <p class="travel-empty">这条路线还在整理中。</p>
   {{- end }}
+</div>
+<div id="photo-lightbox" class="photo-lightbox" hidden>
+  <button class="photo-lightbox-close" type="button" aria-label="关闭">×</button>
+  <img alt="">
+  <p></p>
 </div>
 {{- with $trip }}
 <script>window.TRIP = {{ . | jsonify | safeJS }};</script>
