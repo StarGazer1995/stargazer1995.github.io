@@ -6,7 +6,7 @@ trips:
     end: "2026-10-05"
     days: 7
     type: 自驾
-    status: 已去
+    status: 计划中
     region: 云南
     summary: 从普洱市区一路开到景迈山，白天逛古茶园和咖啡庄园，夜里在芒景拍星。
     center: [22.2, 100.8]
@@ -192,6 +192,85 @@ trips:
           - 嵯峨岚山 → 渡月桥 → 竹林 → 常寂光寺
           - 回大阪取行李，去关西机场
 
+  - slug: zhedong
+    title: 浙东大环线
+    subtitle: 绍兴、台州海岸、天台山、横店与义乌
+    start: ""
+    end: ""
+    days: 4
+    type: 自驾
+    status: 已去
+    region: 浙江
+    summary: 原计划 5 天，实际走成 4 天 3 晚：绍兴、宁波、台州沿海一号线、天台山、横店和义乌。
+    center: [29.6, 120.8]
+    zoom: 7
+    route:
+      - { name: 杭州, lat: 30.2741, lon: 120.1551, kind: drive }
+      - { name: 绍兴, lat: 30.0303, lon: 120.5802, kind: drive }
+      - { name: 宁波, lat: 29.8683, lon: 121.544, kind: stay }
+      - { name: 台州, lat: 28.6564, lon: 121.4208, kind: drive }
+      - { name: 天台山, lat: 29.1931, lon: 121.0067, kind: stay }
+      - { name: 横店, lat: 29.15, lon: 120.32, kind: drive }
+      - { name: 义乌, lat: 29.3069, lon: 120.075, kind: stay }
+      - { name: 杭州, lat: 30.2741, lon: 120.1551, kind: drive }
+    highlights:
+      - 横店土菜馆鸡汤
+      - 台州沿海一号线
+      - 天台山国清寺 / 石梁飞瀑
+      - 义乌三挺路夜市
+    itinerary:
+      - date: "Day 1"
+        title: 杭州 → 绍兴 → 宁波
+        items:
+          - 绍兴鲁迅故里、沈园、仓桥直街
+          - 傍晚驱车到宁波住宿，给第二天去台州缩短路程
+      - date: "Day 2"
+        title: 宁波 → 台州 → 沿海一号线
+        items:
+          - 中午到台州，傍晚走沿海一号线
+          - 海岸线日落是这趟的最佳风景
+      - date: "Day 3"
+        title: 天台山 → 横店 → 义乌
+        items:
+          - 天台山爬山看石梁飞瀑，国清寺
+          - 横店土菜馆鸡汤
+          - 义乌三挺路夜市
+      - date: "Day 4"
+        title: 义乌商贸城 → 杭州
+        items:
+          - 逛义乌国际商贸城
+          - 下午开车回杭州
+
+  - slug: ganxi
+    title: 甘西大环线
+    subtitle: 河西走廊到柴达木、青海湖
+    start: ""
+    end: ""
+    days: 8
+    type: 自驾
+    status: 计划中
+    region: 甘肃 / 青海
+    summary: 兰州出发，沿河西走廊到敦煌，再翻到柴达木和青海湖；路线骨架先放上来，逐日行程待补。
+    note: 路线骨架和主要停靠点已经确定，逐日行程、住宿和门票还在整理。
+    center: [38.2, 98.5]
+    zoom: 6
+    route:
+      - { name: 兰州, lat: 36.0611, lon: 103.8343, kind: drive }
+      - { name: 武威, lat: 37.9283, lon: 102.638, kind: drive }
+      - { name: 张掖, lat: 38.9259, lon: 100.4498, kind: stay }
+      - { name: 嘉峪关, lat: 39.772, lon: 98.2891, kind: drive }
+      - { name: 敦煌, lat: 40.1421, lon: 94.6619, kind: stay }
+      - { name: 大柴旦, lat: 37.85, lon: 95.35, kind: drive }
+      - { name: 茶卡, lat: 36.78, lon: 99.08, kind: stay }
+      - { name: 青海湖, lat: 36.9, lon: 100.2, kind: star }
+      - { name: 西宁, lat: 36.6171, lon: 101.7782, kind: flight }
+    highlights:
+      - 莫高窟
+      - 张掖丹霞
+      - 大柴旦翡翠湖
+      - 青海湖
+    itinerary: []
+
 more:
   - title: 昆明半日落地动线
     type: 中转
@@ -199,9 +278,6 @@ more:
   - title: 浙南秘境环线
     type: 自驾
     note: 缙云仙都 · 丽水 · 雁荡山 · 楠溪江
-  - title: 浙东山水人文环线
-    type: 自驾
-    note: 杭州 · 绍兴 · 天台 · 神仙居 · 松阳
   - title: 桂西山水
     type: 自驾
     note: 南宁 · 崇左 · 百色 · 河池
@@ -214,6 +290,3 @@ more:
   - title: 泾县 · 绩溪
     type: 自驾
     note: 3 日 · 皖南
-  - title: 五一甘青环线
-    type: 自驾
-    note: 青海 · 甘肃 · 2025 五一

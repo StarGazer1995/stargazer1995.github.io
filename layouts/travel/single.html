@@ -12,8 +12,9 @@
     <p class="eyebrow">{{ .region }} · {{ .type }}</p>
     <h1>{{ .title }}</h1>
     <p class="trip-subtitle">{{ .subtitle }}</p>
+    {{- with .note }}<p class="trip-note">{{ . }}</p>{{ end }}
     <div class="trip-meta">
-      <span>{{ .start }} – {{ .end }}</span>
+      <span>{{ if and .start .end }}{{ .start }} – {{ .end }}{{ else }}日期待补{{ end }}</span>
       <span>{{ .days }} 天</span>
       <span class="trip-status {{ if eq .status "已去" }}visited{{ else }}planned{{ end }}">{{ .status }}</span>
     </div>
@@ -58,6 +59,7 @@
     </aside>
 
     <div class="trip-timeline">
+      {{- if .itinerary }}
       {{- range .itinerary }}
       <article class="day-card">
         <div class="day-date">{{ .date }}</div>
@@ -68,6 +70,9 @@
           </ul>
         </div>
       </article>
+      {{- end }}
+      {{- else }}
+      <p class="travel-empty">逐日行程还在整理，先看路线。</p>
       {{- end }}
     </div>
   </div>

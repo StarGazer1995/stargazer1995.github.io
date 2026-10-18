@@ -39,7 +39,7 @@
         <h2>{{ .title }}</h2>
         <p class="trip-summary">{{ .summary }}</p>
         <div class="trip-card-meta">
-          <span>{{ .start }} – {{ .end }}</span>
+          <span>{{ if and .start .end }}{{ .start }} – {{ .end }}{{ else }}日期待补{{ end }}</span>
           <span>{{ .days }} 天</span>
         </div>
         <div class="trip-tags">

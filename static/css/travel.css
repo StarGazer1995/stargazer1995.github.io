@@ -347,6 +347,16 @@ body[theme="dark"] .travel-v2 .trip-hero {
   font-size: 1.02rem;
 }
 
+.travel-v2 .trip-note {
+  max-width: 700px;
+  margin: 14px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-2);
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
 .travel-v2 .trip-meta {
   display: flex;
   flex-wrap: wrap;

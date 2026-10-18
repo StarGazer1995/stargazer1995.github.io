@@ -38,7 +38,7 @@
       var marker = L.marker(c, { icon: icon(t.days || '·', kind) }).addTo(map);
       marker.bindPopup(
         '<strong>' + t.title + '</strong><br>' +
-        t.start + ' – ' + t.end + '<br>' +
+        (t.start && t.end ? t.start + ' – ' + t.end : '日期待补') + '<br>' +
         '<a href="/travel/' + t.slug + '/">查看行程 →</a>'
       );
       markers[t.slug] = marker;
