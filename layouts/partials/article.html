@@ -1,0 +1,54 @@
+{{- $params := .Scratch.Get "params" -}}
+<link rel="stylesheet" href="{{ "css/article.css" | relURL }}">
+<div class="article-v2">
+  <a class="article-back" href="{{ .CurrentSection.RelPermalink }}">
+    <span aria-hidden="true">←</span> {{ .CurrentSection.Title }}
+  </a>
+
+  <header class="article-hero">
+    <div class="article-meta">
+      {{- with .Params.series }}<span class="badge">{{ . }}</span>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+    <h1>{{ .Title | emojify }}</h1>
+    {{- with .Description }}<p class="article-lede">{{ . }}</p>{{ end }}
+    {{- with .Params.cover }}
+    <div class="article-cover">
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    </div>
+    {{- end }}
+  </header>
+
+  <div class="article-layout">
+    <article class="article-body">
+      <div class="content" id="content">
+        {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+      </div>
+      {{- partial "single/footer.html" . -}}
+    </article>
+
+    <aside class="article-aside">
+      {{- with .TableOfContents }}
+      <div class="aside-card">
+        <p class="eyebrow">ON THIS PAGE</p>
+        <div class="article-toc">{{ . }}</div>
+      </div>
+      {{- end }}
+
+      {{- $related := slice -}}
+      {{- with .Params.series -}}
+        {{- $related = where (where $.Site.RegularPages "Section" $.Section) "Params.series" . -}}
+        {{- $related = where $related "Permalink" "!=" $.Permalink -}}
+      {{- end -}}
+      {{- with first 3 $related }}
+      <div class="aside-card">
+        <p class="eyebrow">RELATED</p>
+        <ul class="related-list">
+          {{- range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+        </ul>
+      </div>
+      {{- end }}
+    </aside>
+  </div>
+</div>

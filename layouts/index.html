@@ -4,7 +4,7 @@
 {{- $blog := where .Site.RegularPages "Section" "posts" -}}
 {{- $blog = $blog.ByDate.Reverse -}}
 {{- $blog = where $blog "Title" "!=" "关于我" -}}
-{{- $featured := first 3 $tech -}}
+{{- $featured := first 4 $tech -}}
 {{- $latestBlog := first 4 $blog -}}
 
 <link rel="stylesheet" href="{{ "css/home.css" | relURL }}">
@@ -30,13 +30,39 @@
     </div>
   </section>
 
+  <div class="now-strip">
+    <span class="live-dot" aria-hidden="true"></span>
+    Currently building autonomous driving systems · chasing dark skies on clear nights
+  </div>
+
   <section class="stats">
     <div><strong>{{ len $tech }}</strong><span>Tech notes</span></div>
     <div><strong>{{ len $blog }}</strong><span>Essays</span></div>
     <div><strong>{{ len .Site.Data.projects }}</strong><span>Projects</span></div>
   </section>
 
-  {{- with $featured }}
+  {{- with index $featured 0 }}
+  <section class="featured">
+    <a class="featured-card" href="{{ .RelPermalink }}">
+      <div class="featured-copy">
+        <p class="eyebrow">FEATURED NOTE</p>
+        <div class="card-top">
+          {{- with .Params.series }}<span class="badge">{{ . }}</span>{{ else }}<span class="badge">Tech</span>{{ end }}
+          <time>{{ .Date.Format "2006-01-02" }}</time>
+        </div>
+        <h2>{{ .Title }}</h2>
+        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 220 }}{{ end }}</p>
+        <span class="card-arrow">Read the note →</span>
+      </div>
+      <div class="featured-mark" aria-hidden="true">
+        <span>{{ with .Params.series }}{{ . }}{{ else }}TECH{{ end }}</span>
+        <strong>01</strong>
+      </div>
+    </a>
+  </section>
+  {{- end }}
+
+  {{- with after 1 $featured }}
   <section class="section">
     <div class="section-head">
       <div>
