@@ -43,7 +43,7 @@ jobs:
           pic_compress: true
           output_page_dir: 'content/pages'
           output_post_dir: 'content/posts'
-          clean_unpublished_post: true
+          clean_unpublished_post: false
           metas_keeped: slug
           metas_excluded: pstatus, ptype
 
@@ -60,7 +60,7 @@ jobs:
           pic_compress: true
           output_page_dir: 'content/pages'
           output_post_dir: 'content/tech'
-          clean_unpublished_post: true
+          clean_unpublished_post: false
           metas_keeped: slug
           metas_excluded: pstatus, ptype, related_notes
 
