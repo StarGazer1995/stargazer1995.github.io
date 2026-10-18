@@ -21,6 +21,15 @@
     });
   }
 
+  function photoIcon() {
+    return L.divIcon({
+      className: 'photo-pin',
+      html: '<span>📷</span>',
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
+    });
+  }
+
   var KIND_LABEL = { flight: '飞机', drive: '自驾', train: '铁路', stay: '住宿', star: '拍星' };
 
   var trips = window.TRAVEL_TRIPS || [];
@@ -29,6 +38,7 @@
   if (indexEl && trips.length) {
     var map = makeMap(indexEl, [30, 110], 4);
     var markers = {};
+    var photoMarkers = {};
     var bounds = [];
 
     trips.forEach(function (t) {
@@ -43,6 +53,16 @@
       );
       markers[t.slug] = marker;
       bounds.push(c);
+
+      (t.gallery || []).forEach(function (p) {
+        if (p.lat == null || p.lon == null) return;
+        var pm = L.marker([p.lat, p.lon], { icon: photoIcon() }).addTo(map);
+        pm.bindPopup(
+          '<img src="' + p.src + '" alt="" style="width:180px;border-radius:8px;display:block;margin-bottom:8px">' +
+          '<strong>' + p.caption + '</strong>'
+        );
+        (photoMarkers[t.slug] = photoMarkers[t.slug] || []).push(pm);
+      });
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
@@ -75,6 +95,9 @@
             map.removeLayer(markers[t.slug]);
           }
         }
+        (photoMarkers[t.slug] || []).forEach(function (pm) {
+          if (ok) pm.addTo(map); else map.removeLayer(pm);
+        });
       });
       if (visible.length) map.fitBounds(visible, { padding: [30, 30] });
     }
@@ -121,13 +144,7 @@
 
     (trip.gallery || []).forEach(function (p) {
       if (p.lat == null || p.lon == null) return;
-      var photoIcon = L.divIcon({
-        className: 'photo-pin',
-        html: '<span>📷</span>',
-        iconSize: [30, 30],
-        iconAnchor: [15, 15]
-      });
-      var pm = L.marker([p.lat, p.lon], { icon: photoIcon }).addTo(detailMap);
+      var pm = L.marker([p.lat, p.lon], { icon: photoIcon() }).addTo(detailMap);
       pm.bindPopup(
         '<img src="' + p.src + '" alt="" style="width:200px;border-radius:8px;display:block;margin-bottom:8px">' +
         '<strong>' + p.caption + '</strong>' + (p.date ? '<br>' + p.date : '')
