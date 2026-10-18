@@ -1,0 +1,75 @@
+{{- define "content" -}}
+{{- $trips := site.Data.travel.trips -}}
+<link rel="stylesheet" href="{{ "lib/leaflet/leaflet.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/travel.css" | relURL }}">
+<div class="travel-v2">
+  <section class="travel-hero">
+    <p class="eyebrow">Travel</p>
+    <h1>在路上，慢一点。</h1>
+    <p class="travel-lede">{{ .Content | plainify }}</p>
+  </section>
+
+  <div class="travel-toolbar" role="group" aria-label="筛选旅行">
+    <button type="button" class="active" data-filter="all">全部</button>
+    <button type="button" data-filter="visited">已去过</button>
+    <button type="button" data-filter="planned">计划中</button>
+    <button type="button" data-filter="自驾">自驾</button>
+    <button type="button" data-filter="境外">境外</button>
+  </div>
+
+  <div class="travel-layout">
+    <div class="map-card">
+      <div id="travel-map" class="travel-map"></div>
+      <div class="map-caption">
+        <span>点位按城市 / 景区中心近似，路线为示意</span>
+        <span class="map-legend">
+          <i class="dot visited"></i>已去过
+          <i class="dot planned"></i>计划中
+        </span>
+      </div>
+    </div>
+
+    <div class="trip-list">
+      {{- range $trips }}
+      <a class="trip-card" href="{{ printf "travel/%s/" .slug | relURL }}" data-slug="{{ .slug }}" data-status="{{ .status }}" data-type="{{ .type }}">
+        <div class="trip-card-head">
+          <span class="badge">{{ .type }}</span>
+          <span class="trip-status {{ if eq .status "已去" }}visited{{ else }}planned{{ end }}">{{ .status }}</span>
+        </div>
+        <h2>{{ .title }}</h2>
+        <p class="trip-summary">{{ .summary }}</p>
+        <div class="trip-card-meta">
+          <span>{{ .start }} – {{ .end }}</span>
+          <span>{{ .days }} 天</span>
+        </div>
+        <div class="trip-tags">
+          {{- range first 2 .highlights }}<span>{{ . }}</span>{{ end }}
+        </div>
+        <span class="trip-link">查看行程 →</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+
+  <section class="more-trips">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">More</p>
+        <h2>还在整理</h2>
+      </div>
+    </div>
+    <div class="more-grid">
+      {{- range site.Data.travel.more }}
+      <div class="more-card">
+        <span class="badge">{{ .type }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .note }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </section>
+</div>
+<script>window.TRAVEL_TRIPS = {{ $trips | jsonify | safeJS }};</script>
+<script src="{{ "lib/leaflet/leaflet.js" | relURL }}"></script>
+<script src="{{ "js/travel.js" | relURL }}"></script>
+{{- end -}}

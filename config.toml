@@ -59,6 +59,14 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     title = "Technical notes"
   [[menu.main]]
     weight = 3
+    identifier = "travel"
+    pre = ""
+    post = ""
+    name = "Travel"
+    url = "/travel/"
+    title = "Trip notes and routes"
+  [[menu.main]]
+    weight = 4
     identifier = "tags"
     pre = ""
     post = ""
@@ -66,7 +74,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     url = "/tags/"
     title = ""
   [[menu.main]]
-    weight = 4
+    weight = 5
     identifier = "categories"
     pre = ""
     post = ""
@@ -74,7 +82,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     url = "/categories/"
     title = ""
   [[menu.main]]
-    weight = 5
+    weight = 6
     identifier = "about"
     pre = ""
     post = ""

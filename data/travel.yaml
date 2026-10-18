@@ -1,0 +1,219 @@
+trips:
+  - slug: puer
+    title: 普洱 · 景迈山
+    subtitle: 茶山、咖啡和两个拍星夜
+    start: "2026-09-29"
+    end: "2026-10-05"
+    days: 7
+    type: 自驾
+    status: 已去
+    region: 云南
+    summary: 从普洱市区一路开到景迈山，白天逛古茶园和咖啡庄园，夜里在芒景拍星。
+    center: [22.2, 100.8]
+    zoom: 8
+    route:
+      - { name: 昆明, lat: 25.0389, lon: 102.7183, kind: flight }
+      - { name: 普洱, lat: 22.8252, lon: 100.9665, kind: drive }
+      - { name: 太阳河, lat: 22.6167, lon: 101.0833, kind: drive }
+      - { name: 那柯里, lat: 23.0167, lon: 101.0333, kind: drive }
+      - { name: 景迈山, lat: 22.15, lon: 100.05, kind: star }
+      - { name: 芒景, lat: 22.1667, lon: 100.0167, kind: stay }
+      - { name: 澜沧, lat: 22.5556, lon: 99.9333, kind: flight }
+      - { name: 昆明, lat: 25.0389, lon: 102.7183, kind: flight }
+    highlights:
+      - 景迈山古茶园
+      - 芒景拍星夜
+      - 新寨咖啡庄园
+      - 那柯里茶马古道
+    itinerary:
+      - date: 2026-09-29
+        title: 上海 → 普洱
+        items:
+          - 东航 MU5812 直飞，落地后入住市区
+          - 机场或次日早上取车，先适应节奏
+      - date: 2026-09-30
+        title: 太阳河国家森林公园
+        items:
+          - 犀牛坪景区，小熊猫和犀牛
+          - 工作日几乎包场，晚上回市区早睡
+      - date: 2026-10-01
+        title: 那柯里 + 咖啡庄园
+        items:
+          - 那柯里茶马古道驿站，风雨桥和石板路
+          - 下午小凹子 / 爱伲咖啡庄园，手冲和日落
+          - 晚上整理器材，准备进山
+      - date: 2026-10-02
+        title: 进山 + 半夜调试
+        items:
+          - 普洱 → 澜沧 → 惠民 → 景迈山，约 2.5–3 小时
+          - 途经老达保和糯岗古寨
+          - 月出约 00:10，上半夜调试赤道仪
+      - date: 2026-10-03
+        title: 古茶园 + 主拍夜①
+        items:
+          - 清晨看云海，上午大平掌古茶园徒步
+          - 下午翁基古寨烤茶
+          - 夜里主拍，月出约 01:00
+      - date: 2026-10-04
+        title: 芒景 + 主拍夜②
+        items:
+          - 蜂王树、芒景村，下午午睡
+          - 夜里第二场主拍，月出约 01:50
+      - date: 2026-10-05
+        title: 景迈山 → 昆明 → 上海
+        items:
+          - 06:00 下山，澜沧或普洱还车
+          - 昆明转机回上海，避开返程高峰
+
+  - slug: dianxi
+    title: 滇西行 · 昆明 · 弥勒 · 保山 · 芒市
+    subtitle: 一场婚礼，一条咖啡产地线
+    start: "2026-09-25"
+    end: "2026-10-04"
+    days: 10
+    type: 公共交通
+    status: 已去
+    region: 云南
+    summary: 昆明落地，去泸西参加婚礼，再沿保山、潞江坝、芒市走一圈；全程城际铁路、班车和打车。
+    center: [25.2, 99.2]
+    zoom: 7
+    route:
+      - { name: 昆明, lat: 25.0389, lon: 102.7183, kind: train }
+      - { name: 弥勒, lat: 24.414, lon: 103.442, kind: train }
+      - { name: 泸西, lat: 24.533, lon: 103.766, kind: drive }
+      - { name: 昆明, lat: 25.0389, lon: 102.7183, kind: train }
+      - { name: 保山, lat: 25.112, lon: 99.161, kind: train }
+      - { name: 潞江坝, lat: 25.0, lon: 98.85, kind: drive }
+      - { name: 芒市, lat: 24.433, lon: 98.585, kind: drive }
+      - { name: 保山, lat: 25.112, lon: 99.161, kind: train }
+      - { name: 昆明, lat: 25.0389, lon: 102.7183, kind: flight }
+    highlights:
+      - 泸西婚礼
+      - 潞江坝小粒咖啡
+      - 芒市金银塔
+      - 保山城区慢逛
+    itinerary:
+      - date: 2026-09-25
+        title: 昆明落地
+        items:
+          - 建新园过桥米线
+          - 昆明老街、南强街
+      - date: 2026-09-26
+        title: 昆明 → 弥勒 → 泸西
+        items:
+          - 动车到弥勒，再包车去泸西
+          - 到婷哥家帮忙收拾婚房
+      - date: 2026-09-27
+        title: 泸西婚礼
+        items:
+          - 全天婚礼，跟雨晨一起张罗
+      - date: 2026-09-28
+        title: 弥勒 → 昆明
+        items:
+          - 翠湖、云大、讲武堂一带
+          - 回昆明住一晚
+      - date: 2026-09-29
+        title: 昆明 → 保山 → 潞江坝
+        items:
+          - C352 昆明 08:43 → 保山 12:46
+          - 班车到坝湾，比顿庄园
+          - 晚饭金瓢牛肉
+      - date: 2026-09-30
+        title: 芒市一日
+        items:
+          - 树包塔、菩提寺、五云寺
+          - 珍奇园、雷牙让山银塔和书店
+          - 18:00 返回保山
+      - date: 2026-10-01
+        title: 保山城区
+        items:
+          - 八戒庙、卧佛寺、永子棋院
+          - 希音咖啡冷萃
+      - date: 2026-10-02
+        title: 潞江坝咖啡日
+        items:
+          - 保山南 → 坝湾 → 新寨咖啡庄园
+          - 铁皮卡和瑰夏
+          - 晚饭乡野土菜
+      - date: 2026-10-03
+        title: 保山 → 昆明
+        items:
+          - C342 保山 08:57 → 昆明 13:09
+          - 大观楼、海埂大坝日落
+      - date: 2026-10-04
+        title: 昆明收尾 → 上海
+        items:
+          - 云南省博物馆、官渡古镇
+          - 17:00 飞上海
+
+  - slug: osaka
+    title: 大阪 · 京都
+    subtitle: 环球影城和京都红叶
+    start: "2026-11-20"
+    end: "2026-11-23"
+    days: 4
+    type: 境外
+    status: 计划中
+    region: 日本
+    summary: 三连休加京都红叶主峰，大阪住三晚，一天环球影城，一天京都东山，一天岚山。
+    center: [34.85, 135.6]
+    zoom: 9
+    route:
+      - { name: 关西机场, lat: 34.4347, lon: 135.244, kind: flight }
+      - { name: 大阪 · 梅田, lat: 34.7147, lon: 135.507, kind: stay }
+      - { name: 大阪城, lat: 34.6873, lon: 135.5262, kind: drive }
+      - { name: 环球影城, lat: 34.6654, lon: 135.4323, kind: drive }
+      - { name: 京都, lat: 35.0116, lon: 135.7681, kind: train }
+      - { name: 关西机场, lat: 34.4347, lon: 135.244, kind: flight }
+    highlights:
+      - 环球影城
+      - 京都东山红叶
+      - 大阪城
+      - 岚山竹林
+    itinerary:
+      - date: 2026-11-20
+        title: 关西机场 → 大阪
+        items:
+          - 入住梅田 SEIHA，先存行李
+          - 大阪城，梅田夜景
+      - date: 2026-11-21
+        title: 环球影城
+        items:
+          - 全天 USJ，Express Pass 提前买
+      - date: 2026-11-22
+        title: 京都东山红叶线
+        items:
+          - 京都站 → 稻荷 → 东福寺
+          - 清水寺 → 祇园 → 永观堂
+      - date: 2026-11-23
+        title: 岚山 → 关西机场
+        items:
+          - 退房，行李寄存在天神桥筋六丁目
+          - 嵯峨岚山 → 渡月桥 → 竹林 → 常寂光寺
+          - 回大阪取行李，去关西机场
+
+more:
+  - title: 昆明半日落地动线
+    type: 中转
+    note: 2026-09-25 · 小红书 58 篇整合
+  - title: 浙南秘境环线
+    type: 自驾
+    note: 缙云仙都 · 丽水 · 雁荡山 · 楠溪江
+  - title: 浙东山水人文环线
+    type: 自驾
+    note: 杭州 · 绍兴 · 天台 · 神仙居 · 松阳
+  - title: 桂西山水
+    type: 自驾
+    note: 南宁 · 崇左 · 百色 · 河池
+  - title: 川西五一
+    type: 包车
+    note: 莲宝叶则 · 阿坝 · 甘南方向
+  - title: 山西古建筑
+    type: 自驾
+    note: 8 天 7 晚 · 古建主题
+  - title: 泾县 · 绩溪
+    type: 自驾
+    note: 3 日 · 皖南
+  - title: 五一甘青环线
+    type: 自驾
+    note: 青海 · 甘肃 · 2025 五一
