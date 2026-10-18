@@ -84,7 +84,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 [params]
   # site default theme ["auto", "light", "dark"]
-  defaultTheme = "auto"
+  defaultTheme = "light"
   # public git repo url only then enableGitInfo is true
   gitRepo = "https://github.com/StarGazer1995/stargazer1995.github.io"
   #  which hash function used for SRI, when empty, no SRI is used
@@ -592,7 +592,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       unsafe = true
   # Table Of Contents settings
   [markup.tableOfContents]
-    startLevel = 2
+    startLevel = 1
     endLevel = 6
 
 # Sitemap config

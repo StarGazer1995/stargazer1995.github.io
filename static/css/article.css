@@ -10,17 +10,17 @@
   --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 8px 0 56px;
+  padding: calc(var(--header-height, 3.5rem) + 8px) 0 56px;
   color: var(--ink);
   font-family: var(--sans);
 }
 
 body[theme="dark"] .article-v2 {
   --ink: #f3eee6;
-  --muted: #b3a99c;
-  --line: rgba(243, 238, 230, 0.13);
-  --card: #1f1b17;
-  --soft: #28231d;
+  --muted: #c6b9aa;
+  --line: rgba(243, 238, 230, 0.16);
+  --card: #262019;
+  --soft: #2f2821;
   --accent: #e08a6a;
   --accent-2: #9cc2b2;
 }
@@ -64,8 +64,8 @@ body[theme="dark"] .article-v2 {
 
 body[theme="dark"] .article-v2 .article-hero {
   background:
-    radial-gradient(circle at 90% 8%, rgba(224, 138, 106, 0.16), transparent 36%),
-    linear-gradient(135deg, #241f19 0%, #1d1a16 62%, #1b211d 100%);
+    radial-gradient(circle at 90% 8%, rgba(224, 138, 106, 0.2), transparent 36%),
+    linear-gradient(135deg, #2f271f 0%, #262019 62%, #232a24 100%);
 }
 
 .article-v2 .article-meta {
@@ -241,6 +241,11 @@ body[theme="dark"] .article-v2 .article-hero {
   margin: 2.4em 0;
   border: 0;
   border-top: 1px solid var(--line);
+}
+
+.article-v2 .math-display {
+  margin: 1.6em 0;
+  overflow-x: auto;
 }
 
 .article-v2 .article-aside {

@@ -66,13 +66,17 @@ def normalize_math(text):
         had_newline = "\\newline" in body
         body = body.replace("\\newline", "\\\\")
         body = body.replace("\\_", "_")
-        body = body.replace("…", "\\dots")
+        body = body.replace("…", "\\dots").replace("...", "\\dots")
         body = re.sub(r"\\\\\s*$", "", body.strip())
         if had_newline:
             body = "\\begin{gathered}\n" + body + "\n\\end{gathered}"
-        return "$$\n" + body + "\n$$"
+        return "{{< math >}}\n" + body + "\n{{< /math >}}"
 
-    return re.sub(r"\$\$(.*?)\$\$", repl, text, flags=re.S)
+    # Do not re-wrap blocks that are already inside the shortcode.
+    parts = re.split(r"(\{\{<\s*math\s*>\}\}.*?\{\{<\s*/math\s*>\}\})", text, flags=re.S)
+    for i in range(0, len(parts), 2):
+        parts[i] = re.sub(r"\$\$(.*?)\$\$", repl, parts[i], flags=re.S)
+    return "".join(parts)
 
 
 def main():

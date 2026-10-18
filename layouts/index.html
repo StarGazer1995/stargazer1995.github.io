@@ -51,7 +51,7 @@
           <time>{{ .Date.Format "2006-01-02" }}</time>
         </div>
         <h2>{{ .Title }}</h2>
-        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 220 }}{{ end }}</p>
+        <p>{{ with .Description }}{{ . }}{{ else }}{{ with .Params.series }}Notes from the {{ . }} series.{{ else }}A technical note from the archive.{{ end }}{{ end }}</p>
         <span class="card-arrow">Read the note →</span>
       </div>
       <div class="featured-mark" aria-hidden="true">
@@ -79,7 +79,7 @@
           <time>{{ .Date.Format "2006-01-02" }}</time>
         </div>
         <h3>{{ .Title }}</h3>
-        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 150 }}{{ end }}</p>
+        <p>{{ with .Description }}{{ . }}{{ else }}{{ with .Params.series }}Notes from the {{ . }} series.{{ else }}A technical note from the archive.{{ end }}{{ end }}</p>
         <span class="card-arrow">Read →</span>
       </a>
       {{- end }}
@@ -121,7 +121,7 @@
       <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
         <div class="project-top">
           <h3>{{ .name }}</h3>
-          <span class="project-arrow">↗</span>
+          <span class="project-arrow">→</span>
         </div>
         <p>{{ .description }}</p>
         <div class="tags">
