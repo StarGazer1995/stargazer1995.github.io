@@ -1,4 +1,3 @@
-{{- $params := .Scratch.Get "params" -}}
 <link rel="stylesheet" href="{{ "css/article.css" | relURL }}">
 <div class="article-v2">
   <a class="article-back" href="{{ .CurrentSection.RelPermalink }}">
@@ -8,12 +7,18 @@
   <header class="article-hero">
     <div class="article-meta">
       {{- with .Params.series }}<span class="badge">{{ . }}</span>{{ end }}
+      {{- $series := .Params.series -}}
+      {{- with .Params.tags }}
+        {{- range . }}
+          {{- if ne . $series }}<a class="tag-chip" href="{{ printf "/tags/%s/" . | relURL }}">{{ . }}</a>{{ end }}
+        {{- end }}
+      {{- end }}
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
       <span>{{ .ReadingTime }} min read</span>
     </div>
     <h1>{{ .Title | emojify }}</h1>
     {{- with .Description }}<p class="article-lede">{{ . }}</p>{{ end }}
-    {{- with .Params.cover }}
+    {{- with .Params.cover.image }}
     <div class="article-cover">
       <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
     </div>
@@ -23,9 +28,8 @@
   <div class="article-layout">
     <article class="article-body">
       <div class="content" id="content">
-        {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+        {{- .Content -}}
       </div>
-      {{- partial "single/footer.html" . -}}
     </article>
 
     <aside class="article-aside">

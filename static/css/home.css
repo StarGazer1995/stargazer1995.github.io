@@ -10,7 +10,7 @@
   --sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
   max-width: 1080px;
   margin: 0 auto;
-  padding: calc(var(--header-height, 3.5rem) + 16px) 0 56px;
+  padding: 24px 0 56px;
   color: var(--ink);
   font-family: var(--sans);
 }
@@ -542,4 +542,9 @@ body[theme="dark"] .home-v2 .hero-portrait img {
     align-items: flex-start;
     padding: 26px;
   }
+}
+
+/* PaperMod caps .main at 720px; custom pages need more room. */
+.main {
+  max-width: calc(1120px + var(--gap) * 2);
 }

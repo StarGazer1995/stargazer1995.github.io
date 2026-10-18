@@ -1,4 +1,4 @@
-{{- define "content" -}}
+{{- define "main" -}}
 {{- $tech := where .Site.RegularPages "Section" "tech" -}}
 {{- $tech = $tech.ByDate.Reverse -}}
 {{- $blog := where .Site.RegularPages "Section" "posts" -}}

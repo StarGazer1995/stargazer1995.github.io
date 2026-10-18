@@ -79,6 +79,29 @@ def normalize_math(text):
     return "".join(parts)
 
 
+COVER_RE = re.compile(r"(?m)^cover:[ \t]*(\S.*?)[ \t]*$")
+
+
+def normalize_cover(text):
+    """PaperMod reads ``cover.image``; the Notion action emits a bare string."""
+    if not text.startswith("---"):
+        return text
+    end = text.find("\n---", 3)
+    if end == -1:
+        return text
+    head, rest = text[:end], text[end:]
+
+    def repl(match):
+        value = match.group(1).strip()
+        if value.startswith("{") or value.startswith("|"):
+            return match.group(0)
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        return f'cover:\n  image: "{value}"\n  alt: ""'
+
+    return COVER_RE.sub(repl, head) + rest
+
+
 def main():
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
     manifest = load_manifest()
@@ -106,6 +129,7 @@ def main():
         )
         text = re.sub(r"(?m)^\s*(?:link_to_page|table_of_contents)\s*$\n?", "", text)
         text = normalize_math(text)
+        text = normalize_cover(text)
         content_changed = text != original
         urls = [] if os.environ.get("SKIP_IMAGE_DOWNLOAD") == "1" else sorted(set(URL_RE.findall(text)))
         if not urls and not content_changed:

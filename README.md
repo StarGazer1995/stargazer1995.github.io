@@ -1,7 +1,7 @@
 # stargazer1995.github.io
 
 Personal site for **StarGazer** — autonomous driving, systems work, and
-astrophotography. Built with Hugo and the LoveIt theme, published to GitHub
+astrophotography. Built with Hugo and the PaperMod theme, published to GitHub
 Pages.
 
 ## Content sources
@@ -42,7 +42,7 @@ git submodule update --init --recursive
 hugo server --themesDir themes
 ```
 
-Hugo extended 0.114+ is required for the theme's SCSS pipeline.
+Hugo extended 0.152.2 or newer is required (PaperMod needs 0.146+).
 
 ## Layout
 

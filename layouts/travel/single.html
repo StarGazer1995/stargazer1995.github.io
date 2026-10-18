@@ -1,4 +1,4 @@
-{{- define "content" -}}
+{{- define "main" -}}
 {{- $matches := where site.Data.travel.trips "slug" .Params.trip -}}
 {{- $trip := false -}}
 {{- if $matches }}{{ $trip = index $matches 0 }}{{ end -}}
