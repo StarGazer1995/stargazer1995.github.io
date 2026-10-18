@@ -1,7 +1,8 @@
 ---
 date: 2024-07-04T01:57:00+00:00
 series: 工程实践
-updated: 2026-10-17T16:01:00+00:00
+updated: 2026-10-18T01:08:00+00:00
+description: WGS-84, GCJ-02, BD-09, and the coordinate conversions that bite mapping code.
 created: 2026-10-17T16:01:00+00:00
 tags:
   - Notion

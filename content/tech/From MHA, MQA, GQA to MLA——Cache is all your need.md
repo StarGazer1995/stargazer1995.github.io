@@ -1,7 +1,9 @@
 ---
 date: 2026-05-06T00:26:00+00:00
 series: 工程实践
-updated: 2026-10-17T16:02:00+00:00
+updated: 2026-10-18T01:08:00+00:00
+description: A walk through MHA, MQA, GQA, and MLA — and why the KV cache keeps
+  shaping attention architectures.
 created: 2026-10-17T16:02:00+00:00
 title: From MHA, MQA, GQA to MLA——Cache is all your need
 id: 3fcb3b02-81c4-8118-9c2f-fe4cb1960400
@@ -13,9 +15,9 @@ The thinking behind the MHA is simple here:
 
 Given an input sequence $X[x_1, x_2, ..., x_n]$，MHA is equal to the concatenation of multiple outputs from attention process.
 
-$$
+{{< math >}}
 \begin{gathered}
-O[o^{(1)}, o^{(2)}, ..., o^{(m)}] \\
+O[o^{(1)}, o^{(2)}, \dots, o^{(m)}] \\
 o^{(h)} = Attn(q^{(h)}, k^{(h)}, v^{(h)}) \\
 Attn = \frac{\sum_{i \le t} exp(q_t*k_i^T)v_i}{exp(q_t*k_i^T)}\\
 h : head \\
@@ -25,7 +27,7 @@ k = MLP_k(X) \\
 v = MLP_v(X) \\
  
 \end{gathered}
-$$
+{{< /math >}}
 
 assume the output dimension is $d$, and the number of heads is $h$. Experimentally, we have the following equation: $d_k = d_v = d /h$. In the most of base cases, we only need to predict the t+1 word. and we can just cache the attention result, **KV Cache**, for our next use.
 
@@ -39,9 +41,9 @@ So, people start working on how to reduce the huge KV cache without loss the mod
 
 MQA is quite intuitive that all heads share the same KV cache. The equation of MQA could be:
 
-$$
+{{< math >}}
 \begin{gathered}
-O[o^{(1)}, o^{(2)}, ..., o^{(m)}] \\
+O[o^{(1)}, o^{(2)}, \dots, o^{(m)}] \\
 o^{(h)} = Attn(q, k, v^{(h)}) \\
 Attn = \frac{\sum_{i \le t} exp(q_t*k_i^T)v_i}{exp(q_t*k_i^T)}\\
 h : head \\
@@ -51,7 +53,7 @@ k = MLP_k(X) \\
 v = MLP_v(X) \\
  
 \end{gathered}
-$$
+{{< /math >}}
 
 Based on the equation, we can easily find that the method is quite aggressive that we directly use only one KV cache to do the job, losing the possibility that the model can more. But it is the most memory we can save from the KV cache side.
 
@@ -59,9 +61,9 @@ Based on the equation, we can easily find that the method is quite aggressive th
 
 GQA is rather a kind of trade off when we look at the MHA and the MQA. It first group the heads and heads in the same group share the KV cache. We can use the following equation to model the method
 
-$$
+{{< math >}}
 \begin{gathered}
-O[o^{(1)}, o^{(2)}, ..., o^{(m)}] \\
+O[o^{(1)}, o^{(2)}, \dots, o^{(m)}] \\
 o^{(h)} = Attn(q^{(g)}, k^{(g)}, v^{(h)}) \\
 Attn = \frac{\sum_{i \le t} exp(q_t*k_i^T)v_i}{\sum_{i \le t}exp(q_t*k_i^T)}\\
 g : group \\
@@ -72,7 +74,7 @@ k = MLP_k(X) \\
 v = MLP_v(X) \\
  
 \end{gathered}
-$$
+{{< /math >}}
 
 # MLA [Multi-Head Latent Attention]
 
@@ -82,9 +84,9 @@ Deepseek team proposed this method in their deepseek v2 paper, and they said the
 
 we first look back to the GQA method. In GQA method, the input $X$ will be first separated equally, generating two $K,V$ pairs. These pairs, will be separated equally into $G$ groups and copied $h/g$ times. In MLA, there is a little difference from GQA. Instead of separate the input, MLA choose first project the input into $C$ space, then do the attention. The whole process could be formulated as the following equation:
 
-$$
+{{< math >}}
 \begin{gathered}
-O[o^{(1)}, o^{(2)}, ..., o^{(m)}] \\
+O[o^{(1)}, o^{(2)}, \dots, o^{(m)}] \\
 o^{(h)} = Attn(q^{(h)}, k^{(h)}, v^{(h)}) \\
 Attn = \frac{\sum_{i \le t} exp(q_t*k_i^T)v_i}{\sum_{i \le t}exp(q_t*k_i^T)}\\
 h : head \\
@@ -95,15 +97,15 @@ k = MLP_k(C) \\
 v = MLP_v(C) \\
  
 \end{gathered}
-$$
+{{< /math >}}
 
 Wait, it seems not right that by introducing the C space that the KV cache is still needed.
 
 We look back to the equation of the Dot-Attention:
 
-$$
+{{< math >}}
 q_{t}^{(s)}k_{i}^{(s)} = (x_{t}W_q^{(s)})(c_{i}W_k^{(s)})^T = x_{t}(W_q^{(s)}W_k^{(s)T})c_i^T
-$$
+{{< /math >}}
 
 Which means, when the model is in inference mode, we can cache the product of $W_q^{(s)}W_k^{(s)T}$. Based on the same meaning, we can find that there is another projection matrix after the $o^s$, named as $W_{proj}$, and also the $v_i^{s} = c_iW_i^{s}$, which means that we can also cache the product of $W_i^{s}W_{proj}$.
 
@@ -120,12 +122,12 @@ The drawback for the current method is the MLA does not fit in RoPE.
 
 Given:
 
-$$
+{{< math >}}
 \begin{gathered}
 q_i^{(s)} = x_iW_q^{(s)}R_i,\ k_i^{s} = c_iW_k^{(s)}R_i \\
 q_t^{(s)}k_i^{sT} = x_t(W_q^{(s)}R_tR_i^TW_k^{(s)T})c_i^T = x_t(W_q^{(s)}R_{t-i}W_k^{(s)T})c_i^T
 \end{gathered}
-$$
+{{< /math >}}
 
 As the value of $R_{t-i}$ position related, we cannot just cache the result of $W_q^{(s)}W_k^{(s)T}$.
 
@@ -133,9 +135,9 @@ DeepSeek Team use an appended dimension to fit in RoPE. They add $d_r$ dimension
 
 So, in mathematically, we can formulate the method in following equations.
 
-$$
+{{< math >}}
 \begin{gathered}
-o_t = [o_1, o_2, o_3, ..., o_h] \\
+o_t = [o_1, o_2, o_3, \dots, o_h] \\
 o_t^{s} = Attention(q_t^s, k_{i \le t}^s, v_{i \le t}^s) = \frac{\sum_{i \le t} exp(q_t^s*k_i^{sT})v_i^s}{\sum_{i \le t}exp(q_t^s*k_i^{sT})}\\
 q_i^{(s)} = [x_iW_{qc}^{(s)}, x_iW_{qr}^{(s)}R_i], W_{qc} \in \mathbb R^{d*d_k}, W_{qr} \in \mathbb R^{d*d_r}\\
 
@@ -143,7 +145,7 @@ k_i^{(s)} = [c_iW_{kc}^{(s)}, x_iW_{kr}^{\sout {(s)}}R_i], W_{kc} \in \mathbb R^
 v_i^{(s)} = c_iW_v^{(s)}, W_v \in \mathbb R^{d_c * d_v} \\
 c_i = x_i W_c, W_c \in \mathbb R^{d*d_c}
 \end{gathered}
-$$
+{{< /math >}}
 
 By doing so, those dimensions do not have rope information can just repeat the operation in Part 1, caching the result of $W_q^{(s)}W_k^{(s)T}$. And for those dimension who has the RoPE information, they can be done using the conviction method.
 
@@ -153,9 +155,9 @@ Also, because of the RoPE information is shared cross the head, for K cache ther
 
 One and the final modification is that the DeepSeek team apply Lowrank approximation method on Q
 
-$$
+{{< math >}}
 \begin{gathered}
-o_t = [o_1, o_2, o_3, ..., o_h] \\
+o_t = [o_1, o_2, o_3, \dots, o_h] \\
 o_t^{s} = Attention(q_t^s, k_{i \le t}^s, v_{i \le t}^s) = \frac{\sum_{i \le t} exp(q_t^s*k_i^{sT})v_i^s}{\sum_{i \le t}exp(q_t^s*k_i^{sT})}\\
 
 q_i^{(s)} = [c'_iW_{qc}^{(s)}, c'_iW_{qr}^{(s)}R_i], W_{qc} \in \mathbb R^{d'_c*d_k}, W_{qr} \in \mathbb R^{d'_c*d_r}\\
@@ -166,7 +168,7 @@ v_i^{(s)} = c_iW_v^{(s)}, W_v \in \mathbb R^{d_c * d_v} \\
 c'_i = x_i W_c', W_c' \in \mathbb R^{d *d_c'} \\
 c_i = x_i W_c, W_c \in \mathbb R^{d*d_c}
 \end{gathered}
-$$
+{{< /math >}}
 
 LOOK AT the 2nd part of the $k_i^{(s)}$, the part with RoPE, the input is still the $x_i$. $d’ = 1536$ in the original paper, which is different from $d_c = 512$.
 

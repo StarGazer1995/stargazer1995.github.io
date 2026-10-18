@@ -1,7 +1,9 @@
 ---
 date: 2024-07-04T01:57:00+00:00
 series: 工程实践
-updated: 2026-10-17T16:09:00+00:00
+updated: 2026-10-18T01:07:00+00:00
+description: A short note on C++ override semantics and the bugs that follow
+  from getting them wrong.
 created: 2026-10-17T16:09:00+00:00
 tags:
   - Problems
@@ -55,9 +57,9 @@ int main(){
 
 My initial thought was, 'How can we override a private virtual function? It wouldn't pass the compilation test.' However, I was surprised by the real compiler's response: PASS.
 
-![What a joke.](/images/notion/62de2ed6761c1f50.png)
+![What a joke.](/images/notion/3c2c10c3d95f23dc.png)
 
-![The joke, again!](/images/notion/290404cd2684708f.png)
+![The joke, again!](/images/notion/39080dd46c0cfbea.png)
 
 Not only does it override the private virtual function, but it also changes the access level of the function in the derived class.
 

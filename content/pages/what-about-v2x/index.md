@@ -1,7 +1,8 @@
 ---
 date: 2024-07-04T01:57:00+00:00
 series: 自动驾驶
-updated: 2026-10-18T00:34:00+00:00
+updated: 2026-10-18T01:07:00+00:00
+description: "A skeptical note on V2X: the promise, the cost, and the deployment reality."
 created: 2026-10-17T16:09:00+00:00
 slug: what-about-v2x
 title: What about V2X?

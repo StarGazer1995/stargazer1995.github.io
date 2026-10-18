@@ -1,7 +1,8 @@
 ---
 date: 2024-07-04T01:57:00+00:00
 series: 工具链
-updated: 2026-10-17T16:07:00+00:00
+updated: 2026-10-18T01:07:00+00:00
+description: "A first pass at CUTLASS: layouts, tiled copies, and the mental model behind CuTe."
 created: 2026-10-17T16:07:00+00:00
 tags:
   - Notion

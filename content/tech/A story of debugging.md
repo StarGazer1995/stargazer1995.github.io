@@ -1,7 +1,8 @@
 ---
 date: 2024-07-04T01:57:00+00:00
 series: 工程实践
-updated: 2026-10-17T16:09:00+00:00
+updated: 2026-10-18T01:07:00+00:00
+description: A field story about debugging a QNX crash without a core dump or a shell.
 created: 2026-10-17T16:09:00+00:00
 tags:
   - Problems
