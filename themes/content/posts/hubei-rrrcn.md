@@ -15,7 +15,7 @@ title: 湖北水文数据采集工具
 id: afcdd64e-4db0-4433-b285-eb1a940655b1
 ---
 
-![软件页面](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/a3e6f62b-e4ca-42ac-9a93-d4a8042221fe/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240425T061049Z&X-Amz-Expires=3600&X-Amz-Signature=34d9cb2baccb5854e05aec5ffedf34de3511c9355f2a6a7e9cc059c0bc0d3994&X-Amz-SignedHeaders=host&x-id=GetObject)
+![软件页面](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/a3e6f62b-e4ca-42ac-9a93-d4a8042221fe/Untitled.png)
 
 为了方便采集湖北水文数据，撰写了此工具，方便没有编程基础的同学使用。
 
@@ -44,10 +44,10 @@ id: afcdd64e-4db0-4433-b285-eb1a940655b1
 
 - Email: xxdorad@gmail.com
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/7f969806-fac7-4a46-89ce-efbf5f9349f8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240425T061049Z&X-Amz-Expires=3600&X-Amz-Signature=3362e96fa60d24fc076456f940abfa7fbc74c59f2eb7e45bd860380d7f753979&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/7f969806-fac7-4a46-89ce-efbf5f9349f8/Untitled.png)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/2c9eb592-2477-4af4-9de8-823ca2115180/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240425T061049Z&X-Amz-Expires=3600&X-Amz-Signature=31f49ab724fa2f503b970c8a236ea8d7fafa047b6f5a96dcb04348c3cc5fd2ca&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/2c9eb592-2477-4af4-9de8-823ca2115180/Untitled.png)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/8177260b-d1bb-4966-8506-3cac727fe588/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240425T061049Z&X-Amz-Expires=3600&X-Amz-Signature=111e3b5ab618c145ce1a0a4415c0f0df151f2c83e63f58ac10b868c7d58d619f&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/8177260b-d1bb-4966-8506-3cac727fe588/Untitled.png)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/fba7637a-82a6-47b3-9941-f0642686d874/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240425%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240425T061049Z&X-Amz-Expires=3600&X-Amz-Signature=50d7b99d7365a47c494b18390ff3c5fcc373fbc0d20647983abfd23d21fc6e96&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/9724a895-d6d5-4e82-9739-74885ea5ba68/fba7637a-82a6-47b3-9941-f0642686d874/Untitled.png)

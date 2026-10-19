@@ -12,8 +12,6 @@ import re
 import sys
 from pathlib import Path
 
-import requests
-
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIRS = [ROOT / "content" / "posts", ROOT / "content" / "tech"]
 IMAGE_DIR = ROOT / "static" / "images" / "notion"
@@ -36,12 +34,28 @@ EXT_BY_TYPE = {
 
 
 def load_manifest():
+    """Load the URL -> local path cache, dropping presigned query strings.
+
+    Notion hands out a fresh presigned S3 URL (with an ``ASIA...`` key id and a
+    session token) every time a page is exported. Keying the cache by the whole
+    signed URL therefore misses on every run and - worse - commits the tokens
+    to git, which GitHub secret scanning reports as a leaked AWS key.
+    """
+    manifest = {}
     if MANIFEST.exists():
-        return json.loads(MANIFEST.read_text())
-    return {}
+        for url, local in json.loads(MANIFEST.read_text()).items():
+            manifest[canonical_url(url)] = local
+    return manifest
+
+
+def canonical_url(url):
+    """Identity of a Notion image: host + path, without the signature."""
+    return url.split("?", 1)[0].split("#", 1)[0]
 
 
 def download(url, proxies):
+    import requests  # imported lazily so --skip runs work without it
+
     last = None
     for _ in range(2):
         try:
@@ -136,8 +150,9 @@ def main():
             continue
         changed = False
         for url in urls:
-            if url in manifest and (ROOT / manifest[url].lstrip("/")).exists():
-                local = manifest[url]
+            key = canonical_url(url)
+            if key in manifest and (ROOT / manifest[key].lstrip("/")).exists():
+                local = manifest[key]
             else:
                 try:
                     resp = download(url, proxies)
@@ -147,10 +162,12 @@ def main():
                     continue
                 ctype = resp.headers.get("content-type", "").split(";")[0].lower()
                 ext = EXT_BY_TYPE.get(ctype, Path(url.split("?")[0]).suffix or ".png")
-                name = hashlib.sha1(url.encode()).hexdigest()[:16] + ext
+                # Hash the unsigned URL so a re-export reuses the same file
+                # instead of writing a duplicate copy for every sync run.
+                name = hashlib.sha1(key.encode()).hexdigest()[:16] + ext
                 (IMAGE_DIR / name).write_bytes(resp.content)
                 local = f"/images/notion/{name}"
-                manifest[url] = local
+                manifest[key] = local
                 downloaded += 1
                 print(f"downloaded {local} <- {url[:80]}")
             if url in text:
@@ -160,7 +177,18 @@ def main():
         if changed or content_changed:
             path.write_text(text, encoding="utf-8")
 
-    MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+    payload = json.dumps(
+        dict(sorted(manifest.items())), indent=2, ensure_ascii=False
+    )
+    # Never cache a presigned URL: it carries an AWS key id + session token.
+    leaks = re.findall(r"[?&]X-Amz-[A-Za-z]+=", payload)
+    if leaks:
+        print(
+            f"ERROR refusing to write {len(leaks)} presigned URL(s) to manifest",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    MANIFEST.write_text(payload, encoding="utf-8")
     print(
         f"postprocess: {len(files)} files, {downloaded} images downloaded, "
         f"{rewritten} references rewritten, {len(failed)} failed"
