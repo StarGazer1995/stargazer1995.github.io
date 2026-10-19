@@ -151,9 +151,10 @@ def main():
         changed = False
         for url in urls:
             key = canonical_url(url)
-            if key in manifest and (ROOT / manifest[key].lstrip("/")).exists():
-                local = manifest[key]
-            else:
+            # Manifest paths are site-absolute ("/images/notion/x.png"); they
+            # live under static/, not at the repo root.
+            local = manifest.get(key)
+            if not (local and (ROOT / "static" / local.lstrip("/")).exists()):
                 try:
                     resp = download(url, proxies)
                 except Exception as exc:
