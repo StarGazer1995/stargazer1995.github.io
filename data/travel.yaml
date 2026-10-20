@@ -6,7 +6,7 @@ trips:
     end: "2026-10-05"
     days: 7
     type: 自驾
-    status: 计划中
+    status: 未成行
     region: 云南
     summary: 从普洱市区一路开到景迈山，白天逛古茶园和咖啡庄园，夜里在芒景拍星。
     center: [22.2, 100.8]
@@ -32,7 +32,7 @@ trips:
       - "还没出发，所以这里先把计划、月相和路线放好；等真正走完，再把实拍和现场感受补进来。"
     gallery:
       - { src: "/images/travel/puer/route.jpg", alt: "普洱路线图", caption: "计划路线：普洱 → 景迈山 → 澜沧" }
-    photo_note: "还没出发，先放计划路线图；实拍等回来补。"
+    photo_note: "这趟最后没有成行；路线、月相和器材计划留在这里，当作以后重排的参考。"
     itinerary:
       - date: 2026-09-29
         title: 上海 → 普洱
@@ -273,8 +273,8 @@ trips:
   - slug: zhedong
     title: 浙东大环线
     subtitle: 绍兴、台州海岸、天台山、横店与义乌
-    start: ""
-    end: ""
+    start: "2026-05-01"
+    end: "2026-05-04"
     days: 4
     type: 自驾
     status: 已去
@@ -303,41 +303,60 @@ trips:
       - "Day4 逛义乌国际商贸城，下午回杭州。四天里最喜欢的四件事：横店土菜馆鸡汤、台州沿海一号线日落、天台山登山观瀑、义乌三挺路夜市；商贸城适合扫街，不适合赶时间。"
     gallery:
       - { src: "/images/travel/zhedong/route.jpg", alt: "浙东路线图", caption: "实际路线：杭州 → 绍兴 → 宁波 → 台州 → 天台山 → 横店 → 义乌 → 杭州" }
-    photo_note: "浙东的实拍还在手机里，NAS 活动目录里没有对应文件夹；先放路线图。"
+      - { src: "/images/travel/zhedong/shaoxing-xianheng.jpg", alt: "咸亨酒店门口的孔乙己铜像", caption: "鲁迅中路上的咸亨酒店，门口立着孔乙己的铜像。", day: "2026-05-01", place: "绍兴" }
+      - { src: "/images/travel/zhedong/shaoxing-luxun-home.jpg", alt: "傍晚的鲁迅故里", caption: "傍晚的鲁迅故里，游客挤在故居前的院子里。", day: "2026-05-01", place: "绍兴" }
+      - { src: "/images/travel/zhedong/shaoxing-huangjiu-ice.jpg", alt: "绍兴黄酒棒冰", caption: "绍兴黄酒棒冰，包装上写着“跟着课本游绍兴”，吃起来有股淡淡的酒味。", day: "2026-05-01", place: "绍兴", pos: "center 45%" }
+      - { src: "/images/travel/zhedong/shaoxing-kongyiji.jpg", alt: "孔乙己酒家夜景", caption: "孔乙己酒家的招牌亮起来，门口全是排队和拍照的人。", day: "2026-05-01", place: "绍兴", pos: "center 42%" }
+      - { src: "/images/travel/zhedong/shaoxing-night-street.jpg", alt: "鲁迅故里夜里的步行街", caption: "晚上鲁迅故里的步行街，灯笼把整条街照得通红。", day: "2026-05-01", place: "绍兴" }
+      - { src: "/images/travel/zhedong/ningbo-church-night.jpg", alt: "宁波老城的哥特式教堂夜景", caption: "夜里路过宁波老城，哥特式教堂的钟楼还亮着灯。", day: "2026-05-01", place: "宁波", pos: "center 35%" }
+      - { src: "/images/travel/zhedong/taizhou-sunset-viewpoint.jpg", alt: "台州沿海一号线的日落观景台", caption: "赶到台州沿海一号线时正好日落，大家下车在观景台看海。", day: "2026-05-02", place: "台州" }
+      - { src: "/images/travel/zhedong/taizhou-sunset-sea.jpg", alt: "海平线上的落日和船只", caption: "太阳落到海平线，远处的工程船和货船都成了剪影。", day: "2026-05-02", place: "台州" }
+      - { src: "/images/travel/zhedong/ningbo-noodles.jpg", alt: "宁波的海鲜汤面", caption: "在宁波吃的一碗海鲜汤面，里面有鱼、虾和菌菇。", day: "2026-05-02", place: "宁波" }
+      - { src: "/images/travel/zhedong/ningbo-kaiming-street.jpg", alt: "宁波开明街路口", caption: "宁波开明街路口，金色牌楼后面就是商场。", day: "2026-05-02", place: "宁波" }
+      - { src: "/images/travel/zhedong/taizhou-wind-turbine.jpg", alt: "台州沿海山路的白色风力发电机", caption: "沿海山路上的风力发电机，远处就是海。", day: "2026-05-02", place: "台州", pos: "center 45%" }
+      - { src: "/images/travel/zhedong/tiantai-qiongtai.jpg", alt: "天台山琼台仙谷崖刻", caption: "琼台仙谷的崖壁，粉色大字写着“琼台仙谷”。", day: "2026-05-03", place: "天台山", pos: "center 45%" }
+      - { src: "/images/travel/zhedong/tiantai-shiliang-falls.jpg", alt: "天台山石梁飞瀑", caption: "石梁飞瀑，水从岩壁上直落下来，栈道上站满了游客。", day: "2026-05-03", place: "天台山" }
+      - { src: "/images/travel/zhedong/hengdian-qinwang-palace.jpg", alt: "横店秦王宫门口", caption: "横店秦王宫门口，仿古门楼和两尊兽首雕塑。", day: "2026-05-03", place: "横店" }
+      - { src: "/images/travel/zhedong/hengdian-mushroom-soup.jpg", alt: "横店土菜馆的蘑菇汤", caption: "横店土菜馆的蘑菇汤，黑色陶锅端上桌，是那天最舒服的一顿。", day: "2026-05-03", place: "横店" }
+      - { src: "/images/travel/zhedong/yiwu-santing-night-market.jpg", alt: "义乌三挺路夜市", caption: "义乌三挺路夜市，人多到警察站上升降台维持秩序。", day: "2026-05-03", place: "义乌" }
+      - { src: "/images/travel/zhedong/yiwu-market-south-gate.jpg", alt: "义乌国际商贸城南大门", caption: "义乌国际商贸城南大门，门口大屏在放“义乌好货广场”。", day: "2026-05-04", place: "义乌" }
+      - { src: "/images/travel/zhedong/yiwu-market-shoes.jpg", alt: "义乌商贸城三楼的鞋店", caption: "商贸城三楼的鞋店，门口堆满了清仓的拖鞋。", day: "2026-05-04", place: "义乌" }
+      - { src: "/images/travel/zhedong/hangzhou-east-station.jpg", alt: "杭州东站附近的“烤匠”", caption: "回杭州东站前，在“烤匠”门口吃了最后一顿。", day: "2026-05-04", place: "杭州" }
+    photo_note: "照片来自 2026-05-01～05-04 的 iPhone 原片，按拍摄日期归到每天；原片没有可用 GPS，所以只做城市级归档，不硬标地图点位。"
     itinerary:
-      - date: "Day 1"
+      - date: "2026-05-01"
         title: 杭州 → 绍兴 → 宁波
         items:
           - 绍兴鲁迅故里、沈园、仓桥直街
           - 傍晚驱车到宁波住宿，给第二天去台州缩短路程
-      - date: "Day 2"
+      - date: "2026-05-02"
         title: 宁波 → 台州 → 沿海一号线
         items:
           - 中午到台州，傍晚走沿海一号线
           - 海岸线日落是这趟的最佳风景
-      - date: "Day 3"
+      - date: "2026-05-03"
         title: 天台山 → 横店 → 义乌
         items:
           - 天台山爬山看石梁飞瀑，国清寺
           - 横店土菜馆鸡汤
           - 义乌三挺路夜市
-      - date: "Day 4"
+      - date: "2026-05-04"
         title: 义乌商贸城 → 杭州
         items:
           - 逛义乌国际商贸城
           - 下午开车回杭州
 
   - slug: ganxi
-    title: 甘西大环线
+    title: 甘青大环线
     subtitle: 河西走廊到柴达木、青海湖
     start: "2025-04-30"
-    end: "2025-05-04"
-    days: 5
+    end: "2025-05-05"
+    days: 6
     type: 自驾
     status: 已去
     region: 甘肃 / 青海
-    summary: 兰州出发，沿河西走廊到敦煌，再翻到柴达木和青海湖；路线骨架先放上来，逐日行程待补。
-    note: 路线骨架和主要停靠点已经确定，逐日行程、住宿和门票还在整理。
+    summary: 兰州出发，沿河西走廊到敦煌，再翻到柴达木和青海湖，最后回兰州；六天换了几种完全不同的地貌。
+    note: 逐日行程按照片拍摄时间和路线整理；个别停靠顺序记不清的地方标了“不确定”。
     center: [38.2, 98.5]
     zoom: 6
     route:
@@ -346,29 +365,91 @@ trips:
       - { name: 张掖, lat: 38.9259, lon: 100.4498, kind: stay }
       - { name: 嘉峪关, lat: 39.772, lon: 98.2891, kind: drive }
       - { name: 敦煌, lat: 40.1421, lon: 94.6619, kind: stay }
-      - { name: 东台吉乃尔湖, lat: 37.6119, lon: 93.7639, kind: star }
+      - { name: 冷湖, lat: 38.75, lon: 93.34, kind: drive }
+      - { name: 乌素特（水上）雅丹, lat: 37.6119, lon: 93.7639, kind: star }
       - { name: 大柴旦, lat: 37.85, lon: 95.35, kind: drive }
-      - { name: 茶卡, lat: 36.78, lon: 99.08, kind: stay }
+      - { name: 德令哈, lat: 37.369, lon: 97.37, kind: drive }
       - { name: 青海湖, lat: 36.9, lon: 100.2, kind: star }
-      - { name: 西宁, lat: 36.6171, lon: 101.7782, kind: flight }
+      - { name: 兰州, lat: 36.0611, lon: 103.8343, kind: flight }
     highlights:
       - 莫高窟
       - 张掖丹霞
       - 大柴旦翡翠湖
+      - 乌素特（水上）雅丹
       - 青海湖
     story:
-      - "2025 五一从兰州出发，沿河西走廊到敦煌，再翻到柴达木和青海湖。八天路线骨架：兰州 → 武威 → 张掖 → 嘉峪关 → 敦煌 → 大柴旦 → 茶卡 → 青海湖 → 西宁。"
-      - "这条线的尺度很大：嘉峪关的城墙、平山湖大峡谷的沟壑、张掖丹霞的色带、敦煌的沙和窟、大柴旦翡翠湖的盐池，都是一段一段换地貌。"
-      - "照片主要来自 DJI Mini 的航拍：嘉峪关从空中看是一个完整的方形城，翡翠湖的绿色和蓝色像调色盘，湖心岛像一块漂在水里的盐壳。"
-      - "逐日行程、住宿和门票还在整理；先把路线和照片放上来，下一次再补每天的细节和驾驶强度。"
+      - "2025 五一从兰州取车出发，原计划走到西宁就结束，实际最后又直接开回了兰州，5 月 5 日才飞回上海。六天时间，路线像一个大圈：河西走廊、敦煌、柴达木、青海湖，最后回到黄河边。"
+      - "4 月 30 日一早从兰州往张掖开。下午进平山湖大峡谷，红色岩壁一层压着一层，栈道贴着山脊走，风大得帽子都按不住。走到螺旋楼梯那段，往上爬的时候不觉得，站到高处回头看，沟壑一直铺到天边。晚上在张掖吃了羊排、牛肉，还有酸奶；这绝对是我第一次真的知道，原来西北的牛羊肉和酸奶可以这么好吃。"
+      - "5 月 1 日先到嘉峪关。悬壁长城修在山脊上，台阶又陡又窄，爬到一半腿就开始发酸；回头一看，城墙外面就是一大片灰黄色的戈壁。下午继续往敦煌赶，傍晚到鸣沙山骑骆驼。太阳快落的时候，沙脊上的影子拉得很长，骆驼队一队一队往上走。天黑后回市区逛沙洲夜市，白天那种空旷感一下子被人群和灯光填满。"
+      - "5 月 2 日上午看莫高窟。洞窟里很暗，讲解员的手电筒照到哪里，壁画才亮到哪里；进洞前先去了敦煌博物馆，把河西走廊和莫高窟的来龙去脉补了一遍。下午往柴达木开，路过黑独山。那不是一座孤零零的山，是一大片黑色碎石坡铺到远处，走在上面像到了另一个星球。我们在冷湖吃的晚饭，真的不好吃……之后晚上赶路到了大柴旦住宿。"
+      - "5 月 3 日只有两个点：大柴旦翡翠湖和乌素特（水上）雅丹。翡翠湖的湖水蓝绿得不真实，盐滩白得发亮，无人机升起来以后，水塘、栈道和盐结晶的边界看得清清楚楚。乌素特不用走进去，无人机飞进去看就够了：一片片土丘泡在绿色湖水里，风很大，站久了有点站不稳。傍晚往德令哈开，路边只剩电塔、戈壁和低矮的山，天慢慢暗下来，脑子里就冒出海子那句“姐姐，今夜我在德令哈”。"
+      - "5 月 4 日从青海湖边直接开回兰州。湖面灰蒙蒙的，木栈道一直伸到水边，风把衣服吹得鼓起来。下午回到兰州，先去中山桥，桥上挂满红灯笼，桥下是浑黄的黄河；再上白塔山，最后去甘肃博物院收尾。几天前还在盐湖和戈壁里，突然回到城市，落差很大。"
+      - "5 月 5 日从兰州飞回上海。舷窗外先是黄土高原的沟壑和山脊，往东飞，山慢慢变低，进入华北平原，能看出中国地势从第二阶梯降到第三阶梯。"
     gallery:
-      - { src: "/images/travel/ganxi/jiayuguan.jpg", alt: "嘉峪关航拍", caption: "嘉峪关关城：从空中看，城墙和瓮城是一个完整的方城。", lat: 39.799763, lon: 98.214616, date: "2025-05-01" }
-      - { src: "/images/travel/ganxi/emerald-lake.jpg", alt: "大柴旦翡翠湖航拍", caption: "大柴旦翡翠湖：湖水绿得发亮，旁边是灰白的盐滩。", lat: 37.846166, lon: 95.262423, date: "2025-05-03" }
-      - { src: "/images/travel/ganxi/emerald-shore.jpg", alt: "翡翠湖岸边航拍", caption: "翡翠湖岸边：水蓝得像打翻的颜料，脚下是嘎吱响的盐滩。", lat: 37.847493, lon: 95.260777, date: "2025-05-03" }
-      - { src: "/images/travel/ganxi/lake-island.jpg", alt: "东台吉乃尔湖盐壳岛航拍", caption: "东台吉乃尔湖：一块被绿色湖水围住的白色盐壳。", lat: 37.611941, lon: 93.763927, date: "2025-05-03" }
-      - { src: "/images/travel/ganxi/route.jpg", alt: "甘西路线图", caption: "路线示意：兰州 → 河西走廊 → 敦煌 → 柴达木 → 青海湖 → 西宁。" }
-    photo_note: "照片是 2025 五一这趟的无人机原片；位置由 EXIF GPS 读出，图注由本地 Qwen3-VL 辅助生成；逐日行程还在补。"
-    itinerary: []
+      - { src: "/images/travel/ganxi/jiayuguan.jpg", alt: "嘉峪关航拍", caption: "嘉峪关关城：从空中看，城墙和瓮城是一个完整的方城。", lat: 39.799763, lon: 98.214616, date: "2025-05-01", day: "2025-05-01", place: "嘉峪关" }
+      - { src: "/images/travel/ganxi/zhangye-pingshanhu-trail.jpg", alt: "平山湖大峡谷栈道", caption: "平山湖大峡谷的栈道贴着红色岩壁走，风把帽子吹得按不住。", day: "2025-04-30", place: "张掖" }
+      - { src: "/images/travel/ganxi/zhangye-prayer-flags.jpg", alt: "峡谷里的经幡", caption: "峡谷里挂满经幡，风一吹整片都在响。", day: "2025-04-30", place: "张掖" }
+      - { src: "/images/travel/ganxi/zhangye-spiral-stairs.jpg", alt: "红色螺旋楼梯", caption: "红色螺旋楼梯一直往上盘，爬到顶能看到整片丹霞。", day: "2025-04-30", place: "张掖", pos: "center 45%" }
+      - { src: "/images/travel/ganxi/zhangye-canyon-aerial.jpg", alt: "张掖丹霞航拍", caption: "无人机升起来，红色沟壑和远处的风机一起进画面。", day: "2025-04-30", place: "张掖" }
+      - { src: "/images/travel/ganxi/jiayuguan-wall-climb.jpg", alt: "嘉峪关悬壁长城", caption: "嘉峪关的悬壁长城，台阶又陡又窄，爬上去一回头就是戈壁。", day: "2025-05-01", place: "嘉峪关", pos: "center 40%" }
+      - { src: "/images/travel/ganxi/dunhuang-camel-ride.jpg", alt: "鸣沙山骑骆驼", caption: "鸣沙山的骆驼队，太阳快落山时整条沙脊都是影子。", day: "2025-05-01", place: "敦煌", pos: "center 40%" }
+      - { src: "/images/travel/ganxi/dunhuang-night-pavilion.jpg", alt: "敦煌夜市边的仿古楼", caption: "天黑后回敦煌市区，沙洲夜市边的仿古楼亮起灯。", day: "2025-05-01", place: "敦煌" }
+      - { src: "/images/travel/ganxi/dunhuang-dunes-aerial.jpg", alt: "鸣沙山航拍", caption: "从高处看鸣沙山，沙脊上只剩几个很小的人影。", day: "2025-05-01", place: "敦煌" }
+      - { src: "/images/travel/ganxi/mogao-exhibition.jpg", alt: "敦煌博物馆展板", caption: "敦煌博物馆里“人类敦煌 千年莫高”的展板，进洞窟前先补了一遍历史。", day: "2025-05-02", place: "敦煌" }
+      - { src: "/images/travel/ganxi/mogao-caves.jpg", alt: "莫高窟九层楼", caption: "莫高窟的九层楼和崖壁栈道，游客排着队一批批进洞。", day: "2025-05-02", place: "敦煌", pos: "center 40%" }
+      - { src: "/images/travel/ganxi/qaidam-highway.jpg", alt: "往柴达木方向的戈壁公路", caption: "下午往柴达木开，路过黑独山，公路两边是黑色的碎石坡和戈壁。", day: "2025-05-02" }
+      - { src: "/images/travel/ganxi/heidushan-black-gravel.jpg", alt: "黑独山的黑色碎石坡", caption: "黑独山不是一座孤立的山，是一大片黑色碎石铺开的荒坡，走在上面像到了另一个星球。", day: "2025-05-02" }
+      - { src: "/images/travel/ganxi/lenghu-dinner.jpg", alt: "冷湖的烤肉晚饭", caption: "冷湖的晚饭，烤肉串看着还行，吃起来真的一般。", day: "2025-05-02", place: "冷湖", pos: "center 45%" }
+      - { src: "/images/travel/ganxi/emerald-lake.jpg", alt: "大柴旦翡翠湖航拍", caption: "大柴旦翡翠湖：湖水绿得发亮，旁边是灰白的盐滩。", lat: 37.846166, lon: 95.262423, date: "2025-05-03", day: "2025-05-03", place: "大柴旦" }
+      - { src: "/images/travel/ganxi/emerald-shore.jpg", alt: "翡翠湖岸边航拍", caption: "翡翠湖岸边：水蓝得像打翻的颜料，脚下是嘎吱响的盐滩。", lat: 37.847493, lon: 95.260777, date: "2025-05-03", day: "2025-05-03", place: "大柴旦" }
+      - { src: "/images/travel/ganxi/lake-island.jpg", alt: "乌素特水上雅丹航拍", caption: "乌素特（水上）雅丹：无人机飞进去，能看到一片片土丘泡在绿色湖水里。", lat: 37.611941, lon: 93.763927, date: "2025-05-03", day: "2025-05-03", place: "乌素特（水上）雅丹" }
+      - { src: "/images/travel/ganxi/emerald-lake-aerial-1.jpg", alt: "大柴旦翡翠湖航拍", caption: "从空中看翡翠湖，几个水塘被盐滩和栈道分开，颜色一块深一块浅。", day: "2025-05-03", place: "大柴旦" }
+      - { src: "/images/travel/ganxi/emerald-lake-aerial-2.jpg", alt: "翡翠湖盐结晶航拍", caption: "再压低一点，湖水的绿色、盐滩的白色和藻类的黄绿色分层很明显。", day: "2025-05-03", place: "大柴旦" }
+      - { src: "/images/travel/ganxi/delingha-dusk-road.jpg", alt: "傍晚往德令哈方向的公路", caption: "傍晚往德令哈开，路边只剩电塔、戈壁和低矮的山。海子写《姐姐，今夜我在德令哈》，大概就是这种荒凉感。", day: "2025-05-03", place: "德令哈" }
+      - { src: "/images/travel/ganxi/delingha-solar-plant.jpg", alt: "德令哈光热电站", caption: "路过德令哈的光热电站，成千上万面镜子围着中间的高塔。", day: "2025-05-04" }
+      - { src: "/images/travel/ganxi/qinghai-lake-boardwalk.jpg", alt: "青海湖边的木栈道", caption: "青海湖边的木栈道，湖面灰蒙蒙的，远处看不清边界。", day: "2025-05-04", place: "青海湖" }
+      - { src: "/images/travel/ganxi/lanzhou-zhongshan-bridge.jpg", alt: "兰州中山桥", caption: "傍晚回到兰州，中山桥上挂满红灯笼，桥下是黄河。", day: "2025-05-04", place: "兰州", pos: "center 45%" }
+      - { src: "/images/travel/ganxi/lanzhou-white-pagoda.jpg", alt: "白塔山上的绿瓦建筑", caption: "白塔山上的绿瓦建筑，从山脚一路爬上去能俯瞰兰州。", day: "2025-05-04", place: "兰州" }
+      - { src: "/images/travel/ganxi/lanzhou-gansu-museum.jpg", alt: "甘肃博物院", caption: "最后一站甘肃博物院，门口的金色长颈鹿很显眼。", day: "2025-05-04", place: "兰州" }
+      - { src: "/images/travel/ganxi/flight-window.jpg", alt: "从兰州飞回上海的舷窗", caption: "5 月 5 日从兰州飞回上海。舷窗外先是黄土高原的山脊，往东山越来越低，最后变成华北平原，能看出第二阶梯到第三阶梯的变化。", day: "2025-05-05", pos: "center 40%" }
+      - { src: "/images/travel/ganxi/route.jpg", alt: "甘青大环线路线图", caption: "路线示意：兰州 → 河西走廊 → 敦煌 → 柴达木 → 青海湖 → 西宁 → 兰州。" }
+    photo_note: "照片来自 2025-04-30～05-05 这趟的 iPhone 与无人机原片；无人机片有 EXIF GPS，手机片只按拍摄日归档，不硬标点位。"
+    itinerary:
+      - date: "2025-04-30"
+        title: 兰州 → 张掖
+        items:
+          - 兰州取车出发，沿河西走廊往张掖
+          - 下午进平山湖大峡谷，走栈道看红色岩壁
+          - 晚上住张掖
+      - date: "2025-05-01"
+        title: 张掖 → 嘉峪关 → 敦煌
+        items:
+          - 嘉峪关悬壁长城 / 关城
+          - 傍晚鸣沙山月牙泉骑骆驼
+          - 晚上沙洲夜市，住敦煌
+      - date: "2025-05-02"
+        title: 敦煌 → 大柴旦
+        items:
+          - 上午莫高窟，提前看敦煌博物馆补背景
+          - 下午往柴达木开，路过黑独山，黑色碎石坡一直铺到远处
+          - 晚上在冷湖吃晚饭（不太好吃），饭后赶到大柴旦住宿
+      - date: "2025-05-03"
+        title: 大柴旦 → 乌素特 → 德令哈
+        items:
+          - 大柴旦翡翠湖，主要用无人机航拍
+          - 乌素特（水上）雅丹，无人机飞进去看
+          - 傍晚往德令哈开
+      - date: "2025-05-04"
+        title: 青海湖 → 兰州（直接开回）
+        items:
+          - 青海湖边木栈道
+          - 傍晚回兰州，中山桥和白塔山
+          - 甘肃博物院收尾，住兰州
+      - date: "2025-05-05"
+        title: 兰州 → 上海
+        items:
+          - 从兰州飞回上海
+          - 舷窗外看黄土高原到华北平原的阶梯变化
 
 more:
   - title: 昆明半日落地动线
