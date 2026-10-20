@@ -194,6 +194,7 @@
     var detailMap = makeMap(detailEl, [first.lat, first.lon], 8);
     var detailBounds = [];
     var photoGroups = {};
+    var photoPins = [];
 
     (trip.gallery || []).forEach(function (p) {
       if (!p.place || (p.lat != null && p.lon != null)) return;
@@ -235,6 +236,7 @@
         '<strong>' + p.caption + '</strong>' + (p.date ? '<br>' + p.date : '')
       );
       detailBounds.push([p.lat, p.lon]);
+      photoPins.push(pm);
     });
 
     if (detailBounds.length) {
@@ -243,6 +245,18 @@
         paddingBottomRight: [40, 110]
       });
     }
+    function syncPhotoPins() {
+      var show = detailMap.getZoom() >= 9;
+      photoPins.forEach(function (pm) {
+        if (show) {
+          if (!detailMap.hasLayer(pm)) pm.addTo(detailMap);
+        } else if (detailMap.hasLayer(pm)) {
+          detailMap.removeLayer(pm);
+        }
+      });
+    }
+    detailMap.on('zoomend', syncPhotoPins);
+    syncPhotoPins();
     setTimeout(function () { detailMap.invalidateSize(); }, 200);
   }
 

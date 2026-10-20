@@ -386,11 +386,11 @@ trips:
       - "5 月 4 日从青海湖边直接开回兰州。湖面灰蒙蒙的，木栈道一直伸到水边，风把衣服吹得鼓起来。下午回到兰州，先去中山桥，桥上挂满红灯笼，桥下是浑黄的黄河；再上白塔山，最后去甘肃博物院收尾。几天前还在盐湖和戈壁里，突然回到城市，落差很大。"
       - "5 月 5 日从兰州飞回上海。舷窗外先是黄土高原的沟壑和山脊，往东飞，山慢慢变低，进入华北平原，能看出中国地势从第二阶梯降到第三阶梯。"
     gallery:
-      - { src: "/images/travel/ganxi/jiayuguan.jpg", alt: "嘉峪关航拍", caption: "嘉峪关关城：从空中看，城墙和瓮城是一个完整的方城。", lat: 39.799763, lon: 98.214616, date: "2025-05-01", day: "2025-05-01", place: "嘉峪关" }
       - { src: "/images/travel/ganxi/zhangye-pingshanhu-trail.jpg", alt: "平山湖大峡谷栈道", caption: "平山湖大峡谷的栈道贴着红色岩壁走，风把帽子吹得按不住。", day: "2025-04-30", place: "张掖" }
       - { src: "/images/travel/ganxi/zhangye-prayer-flags.jpg", alt: "峡谷里的经幡", caption: "峡谷里挂满经幡，风一吹整片都在响。", day: "2025-04-30", place: "张掖" }
       - { src: "/images/travel/ganxi/zhangye-spiral-stairs.jpg", alt: "红色螺旋楼梯", caption: "红色螺旋楼梯一直往上盘，爬到顶能看到整片丹霞。", day: "2025-04-30", place: "张掖", pos: "center 45%" }
       - { src: "/images/travel/ganxi/zhangye-canyon-aerial.jpg", alt: "张掖丹霞航拍", caption: "无人机升起来，红色沟壑和远处的风机一起进画面。", day: "2025-04-30", place: "张掖" }
+      - { src: "/images/travel/ganxi/jiayuguan.jpg", alt: "嘉峪关航拍", caption: "嘉峪关关城：从空中看，城墙和瓮城是一个完整的方城。", lat: 39.799763, lon: 98.214616, date: "2025-05-01", day: "2025-05-01", place: "嘉峪关" }
       - { src: "/images/travel/ganxi/jiayuguan-wall-climb.jpg", alt: "嘉峪关悬壁长城", caption: "嘉峪关的悬壁长城，台阶又陡又窄，爬上去一回头就是戈壁。", day: "2025-05-01", place: "嘉峪关", pos: "center 40%" }
       - { src: "/images/travel/ganxi/dunhuang-camel-ride.jpg", alt: "鸣沙山骑骆驼", caption: "鸣沙山的骆驼队，太阳快落山时整条沙脊都是影子。", day: "2025-05-01", place: "敦煌", pos: "center 40%" }
       - { src: "/images/travel/ganxi/dunhuang-night-pavilion.jpg", alt: "敦煌夜市边的仿古楼", caption: "天黑后回敦煌市区，沙洲夜市边的仿古楼亮起灯。", day: "2025-05-01", place: "敦煌" }

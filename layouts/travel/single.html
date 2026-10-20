@@ -12,7 +12,6 @@
     <p class="eyebrow">{{ .region }} · {{ .type }}</p>
     <h1>{{ .title }}</h1>
     <p class="trip-subtitle">{{ .subtitle }}</p>
-    {{- with .note }}<p class="trip-note">{{ . }}</p>{{ end }}
     <div class="trip-meta">
       <span>{{ if and .start .end }}{{ .start }} – {{ .end }}{{ else }}日期待补{{ end }}</span>
       <span>{{ .days }} 天</span>
@@ -51,7 +50,7 @@
           {{- range .highlights }}<li>{{ . }}</li>{{ end }}
         </ul>
       </div>
-      <div class="aside-card">
+      <div class="aside-card aside-route">
         <p class="eyebrow">Route</p>
         <ol class="route-list">
           {{- range $i, $stop := .route }}
@@ -80,7 +79,7 @@
           </ul>
           {{- $dayPhotos := where $gallery "day" .date }}
           {{- with $dayPhotos }}
-          <div class="day-photos">
+          <div class="day-photos{{ if gt (len $dayPhotos) 4 }} day-photos-many{{ end }}">
             {{- range . }}
             <a class="day-photo" href="{{ .src }}" data-photo data-caption="{{ .caption }}">
               <img src="{{ .src }}" alt="{{ .alt }}" loading="lazy"{{ with .pos }} style="object-position: {{ . }}"{{ end }}>
@@ -118,6 +117,7 @@
   </section>
   {{- end }}
   {{- with .photo_note }}<p class="photo-note">{{ . }}</p>{{ end }}
+  {{- with .note }}<p class="trip-note trip-note-footer">{{ . }}</p>{{ end }}
   {{- else }}
   <p class="travel-empty">这条路线还在整理中。</p>
   {{- end }}

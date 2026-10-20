@@ -591,12 +591,18 @@ body[theme="dark"] .travel-v2 .trip-hero {
 
 .travel-v2 .day-photo {
   display: block;
-  width: 84px;
-  height: 60px;
+  flex: 1 1 95px;
+  max-width: 180px;
+  aspect-ratio: 7 / 5;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--soft);
+}
+
+.travel-v2 .day-photos-many .day-photo {
+  flex-basis: 180px;
+  max-width: 220px;
 }
 
 .travel-v2 .day-photo img {
@@ -759,6 +765,16 @@ body[theme="dark"] .travel-v2 .leaflet-tile-pane {
     grid-template-columns: 1fr 1fr;
   }
 
+  .travel-v2 .day-photo {
+    flex-basis: 100px;
+    max-width: 150px;
+  }
+
+  .travel-v2 .day-photos-many .day-photo {
+    flex-basis: 150px;
+    max-width: 200px;
+  }
+
   .travel-v2 .more-grid {
     grid-template-columns: 1fr;
   }
@@ -772,6 +788,15 @@ body[theme="dark"] .travel-v2 .leaflet-tile-pane {
 
   .travel-v2 .trip-aside {
     grid-template-columns: 1fr;
+  }
+
+  .travel-v2 .aside-route {
+    display: none;
+  }
+
+  .travel-v2 .day-photo {
+    flex-basis: 90px;
+    max-width: 120px;
   }
 
   .travel-v2 .day-card {
