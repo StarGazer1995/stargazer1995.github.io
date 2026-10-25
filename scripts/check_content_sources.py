@@ -33,7 +33,7 @@ def selected_paths(args: argparse.Namespace) -> list[str]:
         return sorted(
             path
             for path in git_output("ls-files", "-z", "--", *CONTENT_ROOTS)
-            if path.endswith(".md")
+            if path.endswith(".md") and Path(path).exists()
         )
     return sorted(
         path
