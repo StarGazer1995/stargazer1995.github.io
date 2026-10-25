@@ -1,0 +1,101 @@
+/* One palette shared by PaperMod and the site's custom page layouts. */
+:root {
+  --site-bg: #f7f4ef;
+  --site-surface: #fffdf9;
+  --site-soft: #eee8df;
+  --site-text: #25262a;
+  --site-muted: #667085;
+  --site-line: rgba(37, 38, 42, 0.13);
+  --site-line-strong: #d8d2c8;
+  --site-accent: #2a8f98;
+  --site-accent-2: #bd674d;
+  --site-accent-muted: #6f9ea4;
+  --site-accent-rgb: 42, 143, 152;
+  --site-accent-2-rgb: 189, 103, 77;
+  --site-on-accent: #ffffff;
+  --site-hero-start: #f1e6d8;
+  --site-hero-mid: #fbf8f3;
+  --site-hero-end: #e8f0eb;
+  --site-code-block: #f0ece5;
+  --site-code-text: #2f3035;
+  --site-code-muted: #8a8175;
+  --site-code-comment: #857a6c;
+  --site-code-keyword: #9c3f2c;
+  --site-code-string: #3f6b45;
+  --site-code-number: #2f5d8a;
+  --site-code-type: #6b4a7a;
+  --site-code-operator: #5a5148;
+  --site-shadow: rgba(70, 55, 38, 0.08);
+  --site-serif: Georgia, "Noto Serif SC", "Songti SC", serif;
+  --site-sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+
+  --theme: var(--site-bg);
+  --entry: var(--site-surface);
+  --primary: var(--site-text);
+  --secondary: var(--site-muted);
+  --tertiary: var(--site-line-strong);
+  --content: var(--site-text);
+  --code-block-bg: var(--site-code-block);
+  --code-bg: var(--site-soft);
+  --border: var(--site-line);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --site-bg: #080f1d;
+  --site-surface: #111b2c;
+  --site-soft: #16243a;
+  --site-text: #e8edf5;
+  --site-muted: #9eabc0;
+  --site-line: rgba(183, 205, 232, 0.16);
+  --site-line-strong: #33455e;
+  --site-accent: #74d7db;
+  --site-accent-2: #ff9b83;
+  --site-accent-muted: #9be6e7;
+  --site-accent-rgb: 116, 215, 219;
+  --site-accent-2-rgb: 255, 155, 131;
+  --site-on-accent: #071119;
+  --site-hero-start: #0d1b31;
+  --site-hero-mid: #101a2c;
+  --site-hero-end: #1d1830;
+  --site-code-block: #0f1729;
+  --site-code-text: #e8edf5;
+  --site-code-muted: #8392ad;
+  --site-code-comment: #8fa0b8;
+  --site-code-keyword: #ff9b83;
+  --site-code-string: #98d9a2;
+  --site-code-number: #9fc4ff;
+  --site-code-type: #d0b2ff;
+  --site-code-operator: #74d7db;
+  --site-shadow: rgba(0, 0, 0, 0.32);
+
+  --theme: var(--site-bg);
+  --entry: var(--site-surface);
+  --primary: var(--site-text);
+  --secondary: var(--site-muted);
+  --tertiary: var(--site-line-strong);
+  --content: var(--site-text);
+  --code-block-bg: var(--site-code-block);
+  --code-bg: var(--site-soft);
+  --border: var(--site-line);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+:root .home-v2,
+:root .article-v2,
+:root .travel-v2 {
+  --ink: var(--site-text);
+  --muted: var(--site-muted);
+  --line: var(--site-line);
+  --card: var(--site-surface);
+  --soft: var(--site-soft);
+  --accent: var(--site-accent);
+  --accent-2: var(--site-accent-2);
+  --serif: var(--site-serif);
+  --sans: var(--site-sans);
+}

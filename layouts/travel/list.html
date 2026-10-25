@@ -5,7 +5,7 @@
 <div class="travel-v2">
   <section class="travel-hero">
     <p class="eyebrow">Travel</p>
-    <h1>在路上，慢一点。</h1>
+    <h1>从一个地方，走到下一个地方。</h1>
     <p class="travel-lede">{{ .Content | plainify }}</p>
   </section>
 
@@ -21,7 +21,7 @@
     <div class="map-card">
       <div id="travel-map" class="travel-map"></div>
       <div class="map-caption">
-        <span>点位按城市 / 景区中心近似，路线为示意</span>
+        <span>点击标记查看行程摘要；点位按城市 / 景区中心近似</span>
         <span class="map-legend">
           <i class="dot visited"></i>已去过
           <i class="dot planned"></i>计划中
@@ -72,5 +72,5 @@
 </div>
 <script>window.TRAVEL_TRIPS = {{ $trips | jsonify | safeJS }};</script>
 <script src="{{ "lib/leaflet/leaflet.js" | relURL }}"></script>
-<script src="{{ "js/travel.js" | relURL }}"></script>
+<script src="{{ "js/travel.js" | relURL }}?v=2"></script>
 {{- end -}}

@@ -8,15 +8,16 @@
 {{- $latestBlog := first 4 $blog -}}
 
 <link rel="stylesheet" href="{{ "css/home.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/observatory.css" | relURL }}">
 <div class="home-v2">
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Autonomous driving · Astrophotography</p>
+      <p class="eyebrow">Physical-world systems · Deep-sky imaging</p>
       <h1>Hi, I'm <span>Zhao</span>.</h1>
       <p class="lede">
-        I go by StarGazer online. I work on autonomous driving systems, write
-        down what I learn, and when the sky is clear I'm usually outside with
-        a camera and a telescope.
+        I go by StarGazer online. I build software for systems that meet the
+        physical world, write down what I learn, and spend clear nights turning
+        distant light into something I can study and share.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="/tech/">Read the notes</a>
@@ -32,7 +33,7 @@
 
   <div class="now-strip">
     <span class="live-dot" aria-hidden="true"></span>
-    Right now: autonomous driving by day, deep-sky imaging when the clouds cooperate
+    Current orbit: autonomous driving systems by day, observation planning and image processing by night
   </div>
 
   <section class="stats">
@@ -132,6 +133,28 @@
     </div>
   </section>
   {{- end }}
+
+  <section class="section curiosity-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">The through-line</p>
+        <h2>One curiosity, many scales.</h2>
+      </div>
+      <a class="section-link" href="/home/curiosity-under-the-same-sky.png" target="_blank" rel="noopener">Open full image ↗</a>
+    </div>
+    <figure class="curiosity-frame">
+      <a class="curiosity-art" href="/home/curiosity-under-the-same-sky.png" target="_blank" rel="noopener" aria-label="Open the full illustration">
+        <img src="/home/curiosity-under-the-same-sky.png" alt="An illustrated journey from childhood curiosity through autonomous driving to astrophotography, all under the same night sky." loading="lazy">
+      </a>
+      <figcaption class="curiosity-caption">
+        <div class="curiosity-copy">
+          <p class="eyebrow">Same curiosity · different scales</p>
+          <strong>Roads by day. Galaxies by night.</strong>
+        </div>
+        <span class="curiosity-note">Autonomous driving · Astrophotography</span>
+      </figcaption>
+    </figure>
+  </section>
 
   <section class="section about-strip">
     <div>

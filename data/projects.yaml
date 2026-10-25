@@ -1,3 +1,8 @@
+- name: auto-pi-wbpp-mosaic
+  description: A headless, resumable PixInsight pipeline that turns raw frames into calibrated, corrected, mosaicked, and color-calibrated images.
+  tags: [PixInsight, Pipeline, Astrophotography]
+  link: https://github.com/StarGazer1995/auto-pi-wbpp-mosaic
+
 - name: mcp-stargazing
   description: An MCP server for real-time astronomy data, stargazing planning, weather, and light-pollution analysis.
   tags: [MCP, Python, Astronomy]
@@ -14,6 +19,6 @@
   link: https://github.com/StarGazer1995/stargazing-core
 
 - name: stargazer1995.github.io
-  description: This site — Hugo, the LoveIt theme, and a two-source Notion publishing pipeline.
-  tags: [Hugo, Notion, GitHub Pages]
+  description: This site — Hugo, PaperMod, and a two-source Notion publishing pipeline.
+  tags: [Hugo, PaperMod, GitHub Pages]
   link: https://github.com/StarGazer1995/stargazer1995.github.io

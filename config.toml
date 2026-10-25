@@ -9,6 +9,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 enableEmoji = true
 copyright = "StarGazer"
+disableKinds = ["taxonomy", "term"]
 
 [pagination]
   pagerSize = 12
@@ -34,29 +35,19 @@ copyright = "StarGazer"
     url = "/travel/"
     weight = 3
   [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 4
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 5
-  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 6
+    weight = 4
 
 [params]
   env = "production"
   title = "StarGazer"
-  description = "Autonomous driving engineer, systems builder, and weekend astrophotographer."
-  keywords = ["autonomous driving", "astrophotography", "PixInsight", "deep sky"]
+  description = "Software engineer building systems for the physical world, deep-sky imaging, and the tools between them."
+  keywords = ["autonomous driving", "astrophotography", "PixInsight", "deep sky", "AI assistants"]
   DateFormat = "2006-01-02"
-  defaultTheme = "light"
-  disableThemeToggle = true
+  defaultTheme = "dark"
+  disableThemeToggle = false
   ShowReadingTime = true
   ShowShareButtons = false
   ShowCodeCopyButtons = true
@@ -114,5 +105,3 @@ copyright = "StarGazer"
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  term = ["HTML", "RSS"]

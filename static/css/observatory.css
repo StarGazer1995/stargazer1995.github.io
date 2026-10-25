@@ -1,0 +1,47 @@
+/* Homepage-only observatory treatment; colors come from site-theme.css. */
+html[data-theme="dark"] .home-v2 .hero {
+  border-color: rgba(var(--site-accent-rgb), 0.2);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(var(--site-accent-2-rgb), 0.18), transparent 36%),
+    radial-gradient(circle at 8% 92%, rgba(var(--site-accent-rgb), 0.16), transparent 42%),
+    linear-gradient(135deg, var(--site-hero-start) 0%, var(--site-hero-mid) 58%, var(--site-hero-end) 100%);
+  box-shadow: 0 18px 55px var(--site-shadow);
+}
+
+html[data-theme="dark"] .home-v2 .featured-card {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(var(--site-accent-2-rgb), 0.15), transparent 34%),
+    var(--site-surface);
+  box-shadow: 0 18px 48px var(--site-shadow);
+}
+
+html[data-theme="dark"] .home-v2 .note-card,
+html[data-theme="dark"] .home-v2 .project-card,
+html[data-theme="dark"] .home-v2 .stats div {
+  background: var(--site-surface);
+}
+
+html[data-theme="dark"] .home-v2 .about-strip {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(var(--site-accent-rgb), 0.12), transparent 34%),
+    var(--site-soft);
+}
+
+html[data-theme="dark"] .home-v2 .btn {
+  color: var(--site-text);
+  background: rgba(var(--site-accent-rgb), 0.06);
+}
+
+html[data-theme="dark"] .home-v2 .btn-primary {
+  color: var(--site-on-accent);
+  background: var(--site-accent);
+  box-shadow: 0 10px 24px rgba(var(--site-accent-rgb), 0.2);
+}
+
+html[data-theme="dark"] .home-v2 .btn-primary:hover {
+  background: var(--site-accent-muted);
+}
+
+html[data-theme="dark"] .home-v2 .hero-portrait img {
+  border-color: rgba(var(--site-accent-rgb), 0.28);
+}

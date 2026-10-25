@@ -113,19 +113,74 @@
   if (indexEl && trips.length) {
     var map = makeMap(indexEl, [30, 110], 4);
     var markers = {};
+    var routeLayers = {};
     var photoMarkers = {};
     var bounds = [];
+    var cards = document.querySelectorAll('.trip-card');
+    var selectedSlug = null;
+
+    function themeColor(name, fallback) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+    }
+
+    function setRouteState(slug, selected) {
+      var route = routeLayers[slug];
+      if (!route) return;
+      route.setStyle({
+        weight: selected ? 5 : 3,
+        opacity: selected ? 1 : 0.66
+      });
+      route.bringToFront();
+    }
+
+    function selectTrip(slug) {
+      selectedSlug = slug || null;
+      cards.forEach(function (card) {
+        card.classList.toggle('is-selected', card.getAttribute('data-slug') === selectedSlug);
+      });
+      Object.keys(routeLayers).forEach(function (key) {
+        setRouteState(key, key === selectedSlug);
+      });
+    }
 
     trips.forEach(function (t) {
       var c = t.center || (t.route && t.route[0] ? [t.route[0].lat, t.route[0].lon] : null);
       if (!c) return;
       var kind = t.status === '已去' ? 'visited' : 'planned';
+      var routeCoords = (t.route || [])
+        .filter(function (s) { return s.lat != null && s.lon != null; })
+        .map(function (s) { return [s.lat, s.lon]; });
+      if (routeCoords.length > 1) {
+        var route = L.polyline(routeCoords, {
+          className: 'trip-route',
+          color: kind === 'visited' ? themeColor('--site-accent', '#2a8f98') : themeColor('--site-accent-2', '#bd674d'),
+          weight: 3,
+          opacity: 0.66,
+          lineCap: 'round',
+          lineJoin: 'round'
+        }).addTo(map);
+        route.on('click', function (e) {
+          L.DomEvent.stopPropagation(e);
+          selectTrip(t.slug);
+          if (markers[t.slug]) markers[t.slug].openPopup();
+        });
+        routeLayers[t.slug] = route;
+      }
       var marker = L.marker(c, { icon: icon(t.days || '·', kind) }).addTo(map);
       marker.bindPopup(
         '<strong>' + t.title + '</strong><br>' +
         (t.start && t.end ? t.start + ' – ' + t.end : '日期待补') + '<br>' +
-        '<a href="/travel/' + t.slug + '/">查看行程 →</a>'
+        '<a href="/travel/' + t.slug + '/">查看行程 →</a>',
+        {
+          maxWidth: 260,
+          autoPan: true,
+          autoPanPaddingTopLeft: [20, 20],
+          autoPanPaddingBottomRight: [20, 20]
+        }
       );
+      marker.on('click', function () {
+        selectTrip(t.slug);
+      });
       markers[t.slug] = marker;
       bounds.push(c);
 
@@ -134,7 +189,13 @@
         var pm = L.marker([p.lat, p.lon], { icon: photoIcon() }).addTo(map);
         pm.bindPopup(
           '<img src="' + p.src + '" alt="" style="width:180px;border-radius:8px;display:block;margin-bottom:8px">' +
-          '<strong>' + p.caption + '</strong>'
+          '<strong>' + p.caption + '</strong>',
+          {
+            maxWidth: 280,
+            autoPan: true,
+            autoPanPaddingTopLeft: [20, 20],
+            autoPanPaddingBottomRight: [20, 20]
+          }
         );
         (photoMarkers[t.slug] = photoMarkers[t.slug] || []).push(pm);
       });
@@ -143,7 +204,6 @@
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
 
     var buttons = document.querySelectorAll('[data-filter]');
-    var cards = document.querySelectorAll('.trip-card');
 
     function matches(t, f) {
       if (f === 'all') return true;
@@ -170,10 +230,19 @@
             map.removeLayer(markers[t.slug]);
           }
         }
+        if (routeLayers[t.slug]) {
+          if (ok) routeLayers[t.slug].addTo(map); else map.removeLayer(routeLayers[t.slug]);
+        }
         (photoMarkers[t.slug] || []).forEach(function (pm) {
           if (ok) pm.addTo(map); else map.removeLayer(pm);
         });
       });
+      if (selectedSlug && !visible.some(function (point) {
+        var marker = markers[selectedSlug];
+        return marker && point[0] === marker.getLatLng().lat && point[1] === marker.getLatLng().lng;
+      })) {
+        selectTrip(null);
+      }
       if (visible.length) map.fitBounds(visible, { padding: [30, 30] });
     }
 

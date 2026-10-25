@@ -10,7 +10,7 @@
       {{- $series := .Params.series -}}
       {{- with .Params.tags }}
         {{- range . }}
-          {{- if ne . $series }}<a class="tag-chip" href="{{ printf "/tags/%s/" . | relURL }}">{{ . }}</a>{{ end }}
+          {{- if ne . $series }}<span class="tag-chip">{{ . }}</span>{{ end }}
         {{- end }}
       {{- end }}
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
