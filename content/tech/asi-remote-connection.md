@@ -1,6 +1,7 @@
 ---
 title: ASI2600MC Air 现场组网与 NAS 自动回传
 date: 2026-10-18T16:30:00+08:00
+source: local
 series: 天文摄影
 description: 用一台旅行路由为 ASIAIR 扩展 Wi-Fi 覆盖，同时保留互联网访问；拍摄期间将原始帧同步到家里的 NAS，收工时无需再搬运设备。
 tags: ["深空笔记", "ASIAIR", "远程"]

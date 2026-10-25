@@ -1,6 +1,7 @@
 ---
 title: 先做人，再做间谍
 date: 2026-10-23T20:30:00+08:00
+id: 402b3b02-81c4-81dc-aaca-d01353b10edf
 slug: berlin-spy
 categories:
   - Blog

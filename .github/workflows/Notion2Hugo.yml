@@ -24,6 +24,9 @@ jobs:
           submodules: 'recursive'
           fetch-depth: 0
 
+      - name: Validate content sources
+        run: python3 scripts/check_content_sources.py --all
+
       - name: Check the NOTION_SYNC_DATETIME
         id: GetNotionSyncDatetime
         run: |

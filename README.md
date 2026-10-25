@@ -16,6 +16,20 @@ The site deliberately keeps two Notion databases apart:
 Only rows with `pstatus = 已发布` are published. `ptype = page` rows land in
 `content/pages`.
 
+Every article in `content/posts` or `content/tech` must declare its source:
+
+- Notion-managed articles contain a real Notion `id`.
+- Local-only articles contain `source: local`.
+
+This prevents a hand-written staging file from silently entering the Notion
+pipeline without an `id`. Enable the repository pre-commit hook once per clone:
+
+```bash
+scripts/install_git_hooks.sh
+```
+
+The same check runs in GitHub Actions before Notion sync.
+
 ## Pipeline
 
 `.github/workflows/Notion2Hugo.yml` runs every two hours and on demand:
