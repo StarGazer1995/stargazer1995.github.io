@@ -9,6 +9,7 @@ categories:
 title: how to build a simple mcp tool server from scratch
 id: 3fcb3b02-81c4-8158-8a95-fe8bfd55a9b9
 ---
+
 # Pre-assumption
 
 This guide assumes that readers are familiar with Linux or MacOS command line interface (CLI) and what is a MCP server.
